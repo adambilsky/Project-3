@@ -30,10 +30,14 @@ const studentSchema = new Schema({
             default: false
         },
         writer: {
-            value: "Writer",
+            value: "Screenwriter",
             type: Boolean,
             default: false
         },
+        /*  Note: The terms "Director of Photography" and "Cinematographer" 
+            are interchangeable, so if we utilize a search box, we may want to consider
+            how to tell the search function (Boolean || ?) that one user-input value
+            is the same as the other*/   
         dp: {
             value: "Director of Photography",
             type: Boolean,
@@ -144,7 +148,7 @@ const studentSchema = new Schema({
         we can add a method to create additional projects here if necessary*/
     },
     bio: String,
-    profileImg: Image,
+    // profileImg: Image,
     dateJoined: { type: Date, default: Date.now }
 
 });
