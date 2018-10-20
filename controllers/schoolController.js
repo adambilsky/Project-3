@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the SchoolController
 module.exports = {
   findAll: function(req, res) {
-    db.School
+    db.Schools
       .find(req.query)
       .sort({ dateJoined: -1 })
       .then(dbModel => res.json(dbModel))
