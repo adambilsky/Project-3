@@ -16,8 +16,11 @@ const studentSchema = new Schema({
         // more methods may be added, such as instagram, facebook, etc
     },
 
-    // This is a list of all possible roles the user has filled.
-    // They will be used with checkboxes. A separate object will hold the resume.
+    /*  This is a list of all possible roles the user has filled.
+        They will be used with checkboxes. A separate object will hold the resume.
+        *** To build the JSON separately and import only those fields into the student array that we need,
+        we will need to import the file and create only an array in the student model. */
+
     positionExp: {
         producer: {
             value: "Producer",
