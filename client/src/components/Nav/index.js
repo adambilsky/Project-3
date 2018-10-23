@@ -10,10 +10,14 @@ import React from "react";
     
 */
 const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a className="navbar-brand" href="/">
-      Welcome to IMDBu
-    </a>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">IMDBu</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+      </ul>
+    </div>
   </nav>
 );
 
