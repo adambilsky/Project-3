@@ -22,14 +22,19 @@ export default {
     // Update (put) student record
     updateStudent: function(studentData) {
       return axios.put("api/student", studentData);
-    }
+    },
 
     // *** API --SCHOOL-- CRUD FUNCTIONS HERE ***
 
     // List (get) all schools
-
+    getSchools: function() {
+        return axios.get("api/school");
+    },
 
     // Search (get) school by id
+    getSchool: function(id) {
+        return axios.get("api/school" + id);
+    },
 
 
     // Add (post) new school to database
