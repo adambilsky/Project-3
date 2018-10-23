@@ -20,7 +20,13 @@ class Students extends Component {
     }
 
     // declare student "load" (get) method using API promise
-
+    loadStudents = () => {
+        API.getStudents()
+          .then(res =>
+            this.setState({})
+          )
+          .catch(err => console.log(err));
+      };
     
     /* declare other student request methods -
 
