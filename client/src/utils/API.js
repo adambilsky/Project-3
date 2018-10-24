@@ -36,10 +36,20 @@ export default {
         return axios.get("api/school" + id);
     },
 
-
     // Add (post) new school to database
-
+    saveSchool: function(schoolData) {
+      return axios.post("/api/school", schoolData);
+    },
 
     // Update (put) school record
+    updateSchool: function(schoolData) {
+      return axios.put("api/school", schoolData);
+    },
+
+    // Remove a school from the database
+    deleteSchool: function(id) {
+      return axios.delete("/api/school/" + id);
+    },
+
 
 };
