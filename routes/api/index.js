@@ -7,6 +7,6 @@ const schoolRoutes = require("./school");
 router.use("/students", studentRoutes);
 
 // School routes
-router.use("/school", schoolRoutes);
+router.use("/schools", schoolRoutes);
 
 module.exports = router;

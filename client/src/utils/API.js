@@ -28,27 +28,27 @@ export default {
 
     // List (get) all schools
     getSchools: function() {
-        return axios.get("api/school");
+        return axios.get("api/schools");
     },
 
     // Search (get) school by id
     getSchool: function(id) {
-        return axios.get("api/school" + id);
+        return axios.get("api/schools" + id);
     },
 
     // Add (post) new school to database
     saveSchool: function(schoolData) {
-      return axios.post("/api/school", schoolData);
+      return axios.post("/api/schools", schoolData);
     },
 
     // Update (put) school record
     updateSchool: function(schoolData) {
-      return axios.put("api/school", schoolData);
+      return axios.put("api/schools", schoolData);
     },
 
     // Remove a school from the database
     deleteSchool: function(id) {
-      return axios.delete("/api/school/" + id);
+      return axios.delete("/api/schools/" + id);
     },
 
 

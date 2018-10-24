@@ -34,20 +34,20 @@ const App = () => (
 
                 {/* the following route should display ALL students (assuming only one school:
                 in 2.0 we may have to restructure to filter for students of a PARTICULAR school*/}
-                <Route exact path="/student" component={Students} />
+                <Route exact path="/students" component={Students} />
                 
                 {/* I believe here we may need two entries for the student "detail" page, 
                 one for the profile owner, another for visitors, so we would need two additional 
                 pages in the .pages/student/ folder */}
 
-                {/* <Route exact path="/student/:id" component={Students} /> */}
+                {/* <Route exact path="/students/:id" component={Students} /> */}
 
 
                 {/* the following route would display ALL schools */}
-                <Route exact path="/school" component={Schools} />
+                <Route exact path="/schools" component={Schools} />
 
                 {/* the following route would display ONE schools */}
-                {/* <Route exact path="/school/:id" component={School} /> */}
+                {/* <Route exact path="/schools/:id" component={School} /> */}
 
                 }
                 <Route component={NoMatch} />
