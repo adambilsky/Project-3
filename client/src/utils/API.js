@@ -5,23 +5,23 @@ export default {
 
     // List (get) all students
     getStudents: function() {
-      return axios.get("/api/student");
+      return axios.get("/api/students");
     },
     // Search (get) for student by id
     getStudent: function(id) {
-      return axios.get("/api/student/" + id);
+      return axios.get("/api/students/" + id);
     },
     // Deletes the student with the given id
     deleteStudent: function(id) {
-      return axios.delete("/api/student/" + id);
+      return axios.delete("/api/students/" + id);
     },
     // Add (post) new student to database
     saveStudent: function(studentData) {
-      return axios.post("/api/student", studentData);
+      return axios.post("/api/students", studentData);
     },
     // Update (put) student record
     updateStudent: function(studentData) {
-      return axios.put("api/student", studentData);
+      return axios.put("api/students", studentData);
     },
 
     // *** API --SCHOOL-- CRUD FUNCTIONS HERE ***
