@@ -144,7 +144,7 @@ const studentSchema = new Schema({
         we can add a method to create additional projects here if necessary*/
     },
     bio: String,
-    profileImg: Image,
+    // profileImg: Image,
     dateJoined: { type: Date, default: Date.now }
 
 });

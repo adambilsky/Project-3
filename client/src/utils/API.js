@@ -1,6 +1,7 @@
 import axios from "axios";
 
-// export default {
+export default {
+    
 // API CRUD functions here
 
 // List (get) all students

@@ -7,10 +7,10 @@ mongoose.connect(
     process.env.MONGODB_URI ||
     "mongodb://localhost/"//Update with IMDBU Mongodb
 
-  );
+);
 
-  const studentSeed = [
-      {
+const studentSeed = [
+    {
         userName: "Super8isGreat",
         firstName: "Steven",
         lastName: "Spielberg",
@@ -24,7 +24,7 @@ mongoose.connect(
             mobile: "800-555-5297",
             // more methods may be added, such as instagram, facebook, etc
         },
-    
+
         // This is a list of all possible roles the user has filled.
         // They will be used with checkboxes. A separate object will hold the resume.
         positionExp: {
@@ -100,7 +100,7 @@ mongoose.connect(
                 type: Boolean,
                 default: false
             },
-    
+
         },
         resume: {
             project1: {
@@ -166,16 +166,16 @@ mongoose.connect(
         profileImg: Image,
         dateJoined: new Date(Date.now())
     }
-  ];
+];
 
-  db.Student
-  .remove({})
-  .then(() => db.Student.collection.insertMany(studentSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+db.Student
+    .remove({})
+    .then(() => db.Student.collection.insertMany(studentSeed))
+    .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
