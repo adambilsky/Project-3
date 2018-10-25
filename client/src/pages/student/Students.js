@@ -62,7 +62,7 @@ class Students extends Component {
                 or list all the fields. Not sure.
                 */
             })
-                .then(res => this.loadBooks())
+                .then(res => this.loadStudents())
                 .catch(err => console.log(err));
         };
 
