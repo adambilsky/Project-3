@@ -12,7 +12,7 @@ import React from "react";
 const Nav = () => (
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">IMDBu</a>
+      <a href="/" class="brand-logo">IMDBu</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <li><a href="/profile">Profile</a></li>

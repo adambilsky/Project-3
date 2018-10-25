@@ -4,11 +4,12 @@ img {
 }
 
 .card-grid-item {
-    float: left;
+
 }
 
 .grid-container {
-    float: left;
+    margin: auto;
+    width: 75%;
 }
 
 .tagLine {
@@ -16,7 +17,6 @@ img {
 }
 
 #profPhoto {
-    float: left;
     padding-right: 10px;
 }
 
