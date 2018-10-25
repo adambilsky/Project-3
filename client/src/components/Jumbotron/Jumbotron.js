@@ -5,7 +5,7 @@ const Jumbotron = ({ children }) => (
     style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
     className="jumbotron"
   >
-  <h4>Testing the Jumbotron</h4>
+  <h4>Welcome to IMDBu</h4>
     {children}
   </div>
 );

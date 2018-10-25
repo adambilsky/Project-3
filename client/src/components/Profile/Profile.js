@@ -9,9 +9,7 @@ import { WorkList, ListItem } from "../WorkList";
 // </div>
 // );
 
-const listOptions = Object.keys(Student).map(function(key) {
-    return <option value={key}>{Student[key]}</option>
-});
+
 class Profile extends React.Component {
 
     state = {
@@ -22,8 +20,7 @@ class Profile extends React.Component {
         this.setState({ student: Student })
     }
 
- 
-
+    
 
     render() {
         return (
@@ -39,13 +36,25 @@ class Profile extends React.Component {
                     degree={this.state.student.degree}
                     concentration={this.state.student.concentration}
                     city={this.state.student.city}
-                    email={""}
+                    email={Student.contactInfo.email}
                 />
-                    <WorkList>
-                            <ListItem>
-                                <p>{listOptions.producer}</p>
-                            </ListItem>
+                <WorkList>
+                    <ListItem>
+                        <img src="https://i.imgur.com/wU1W62O.jpg" alt="" className="circle" />
+                        <span className="title"><b>Project Title 1</b></span>
+                        <p><b>Role</b> <br />
+                            Description. I did this. We worked together, it was great.</p>
+                    </ListItem>
                     </WorkList>
+
+                    <WorkList>
+                    <ListItem>
+                        <img src="https://i.imgur.com/tjF63dq.jpg" alt="" className="circle" />
+                        <span className="title"><b>Project Title 2</b></span>
+                        <p><b>Role</b> <br />
+                            Description. I did this. We worked together, it was great.</p>
+                    </ListItem>
+                </WorkList>
 
             </div>
         );
