@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Student collection and inserts the books below
+// This file empties the Student collection and inserts the records below
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/"//Update with IMDBU Mongodb
+    "mongodb://localhost/imdbu"//Update with IMDBU Mongodb
 
   );
 

@@ -4,4 +4,4 @@ npm-debug.log
 .env
 /imdbu
 /yarn.lock
-/package.json
+.vscode/
