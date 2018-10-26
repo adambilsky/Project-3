@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from './Main'
 // import pages and components here // 
 
 
@@ -10,15 +11,14 @@ const App = () => (
 
     <Router>
         <div>
-            <Nav />
+            
             <Switch>
-                <Route exact path="/" component={/*whatever*/} />
+                <Route exact path="/main" component={Main} />
                 {
                 /*  <Route exact path="/" component={} />
                     <Route exact path="/" component={} />
                     <Route exact path="/" component={} /> */
                 }
-                <Route component={NoMatch} />
             </Switch>
         </div>
     </Router>
