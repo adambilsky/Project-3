@@ -11,7 +11,7 @@ import React from "react";
 */
 const Nav = () => (
   <nav>
-    <div class="nav-wrapper">
+    <div className="nav-wrapper orange lighten-2">
       <a href="/" class="brand-logo">IMDBu</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/main">Home</a></li>

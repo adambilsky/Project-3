@@ -6,11 +6,11 @@ const SchoolCard = props => (
 
         <div className="grid-container">
             <div className="card grid-item" id={props.id}>
-                <img id="profPhoto" className="card-img-top circle" src={props.image} alt={props.name} />
+                <img id="profPhoto" className="card-img-top" src={props.image} alt={props.name} />
 
                 <h4>{props.schoolName}</h4>
                 <p>{props.tagline}</p>
-                <p>{props.schoolName} | {props.city}</p>
+                <b><p>{props.schoolName} | {props.city}</p></b>
                 <p>Contact: {props.email}</p>
 
             </div>
