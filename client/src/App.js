@@ -1,6 +1,7 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from './Main'
 
 import React, { Component }  from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
 import Profile from "./components/Profile";
@@ -31,6 +32,9 @@ const App = () => (
 
     <Router>
         <div>
+            
+            <Switch>
+                <Route exact path="/main" component={Main} />
             <Nav />
                 <Route exact path="/" component={Jumbotron} />
                 <Route exact path="/profile" component={Profile} />
@@ -39,6 +43,7 @@ const App = () => (
                     <Route exact path="/" component={} />
                     <Route exact path="/" component={} /> */
                 }
+            </Switch>
         </div>
     </Router>
 );
