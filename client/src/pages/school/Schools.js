@@ -20,7 +20,13 @@ class Schools extends Component {
     }
 
     // declare school "load" (get) method using API promise
-
+    loadSchools = () => {
+        API.getSchools()
+          .then(res =>
+            this.setState({})
+          )
+          .catch(err => console.log(err));
+      };
     
     /* declare other school request methods -
 
