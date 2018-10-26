@@ -1,12 +1,12 @@
 const router = require("express").Router();
 
 
-
-
 // Dependencies
+
+
 const studentRoutes = require("./student");
 
-// const schoolRoutes = require("./school");
+const schoolRoutes = require("./school");
 
 module.exports = function(app) {
 
@@ -24,7 +24,7 @@ module.exports = function(app) {
 app.get("/api/:student", function(req, res) {
     Student.findAll({
         where: {
-            id: req.params.student
+            _id: req.params.student
         }
     }).then(function(results) {
         res.json(results);
@@ -46,6 +46,7 @@ app.post("/app/new", function (req, res) {
         degree: req.body.degree,
         concentration: req.body.concentration,
         city: req.body.city,
+        // do we need this contactInfo line?
         contactInfo: req.body.contactInfo,
         email: req.body.email,
         mobile: req.body.mobile
@@ -58,6 +59,7 @@ app.post("/app/new", function (req, res) {
 
 
 // Student routes
+
 // router.use("/student", studentRoutes);
 
 // School routes
@@ -66,7 +68,3 @@ app.post("/app/new", function (req, res) {
 // module.exports = router;
 
 
-
-// ERROR message
-// ENOENT (No such file or directory): Commonly raised by fs operations to indicate that a component of the specified pathname does not exist 
-// — no entity (file or directory) could be found by the given path.
