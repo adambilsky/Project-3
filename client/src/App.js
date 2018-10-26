@@ -1,9 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import React, { Component }  from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Jumbotron from "./components/Jumbotron";
+import Profile from "./components/Profile";
+// import pages and components here // 
+
 import Students from "./pages/student";
 import Schools from "./pages/school";
-import NoMatch from "./pages/no-match";
-import Nav from "./components/Nav";
 
 // import pages and components above // 
 
@@ -28,30 +32,13 @@ const App = () => (
     <Router>
         <div>
             <Nav />
-            <Switch>
-                {/* the following route is the default display*/}
-                <Route exact path="/" component={/*whatever*/} />
-
-                {/* the following route should display ALL students (assuming only one school:
-                in 2.0 we may have to restructure to filter for students of a PARTICULAR school*/}
-                <Route exact path="/students" component={Students} />
-                
-                {/* I believe here we may need two entries for the student "detail" page, 
-                one for the profile owner, another for visitors, so we would need two additional 
-                pages in the .pages/student/ folder */}
-
-                {/* <Route exact path="/students/:id" component={Students} /> */}
-
-
-                {/* the following route would display ALL schools */}
-                <Route exact path="/schools" component={Schools} />
-
-                {/* the following route would display ONE schools */}
-                {/* <Route exact path="/schools/:id" component={School} /> */}
-
+                <Route exact path="/" component={Jumbotron} />
+                <Route exact path="/profile" component={Profile} />
+                {
+                /*  <Route exact path="/" component={} />
+                    <Route exact path="/" component={} />
+                    <Route exact path="/" component={} /> */
                 }
-                <Route component={NoMatch} />
-            </Switch>
         </div>
     </Router>
 );
