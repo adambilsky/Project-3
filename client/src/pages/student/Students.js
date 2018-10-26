@@ -53,29 +53,29 @@ class Students extends Component {
     
 
     // declare form submission method
-    handleFormSubmit = event => {
-        event.preventDefault();
-        if (/* we may need a switch here with various API requests attached? */) {
-            API.saveStudent({
+  //  handleFormSubmit = event => {
+      //  event.preventDefault();
+      //  if (/* we may need a switch here with various API requests attached? */) {
+       //     API.saveStudent({
                 /* not sure how to construct this, maybe req.body,
                 or we import the format of the body?
                 or list all the fields. Not sure.
                 */
-            })
-                .then(res => this.loadStudents())
-                .catch(err => console.log(err));
-        };
+       //     })
+            //    .then(res => this.loadStudents())
+              //  .catch(err => console.log(err));
+      //  };
 
         // setup page rendering
 
-        render() {
-            return (
-                console.log("The page is currently empty.")
-                // page design here
+//         render() {
+//             return (
+//                 console.log("The page is currently empty.")
+//                 // page design here
 
-            );
-        };
-    }
-}
+//             );
+//         };
+//     }
+ }
     // export the Students class
     export default Students;
