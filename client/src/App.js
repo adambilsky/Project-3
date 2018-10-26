@@ -33,17 +33,16 @@ const App = () => (
     <Router>
         <div>
             
-            <Switch>
-                <Route exact path="/main" component={Main} />
+                
             <Nav />
                 <Route exact path="/" component={Jumbotron} />
                 <Route exact path="/profile" component={Profile} />
+                <Route exact path="/main" component={Main} />
                 {
                 /*  <Route exact path="/" component={} />
                     <Route exact path="/" component={} />
                     <Route exact path="/" component={} /> */
                 }
-            </Switch>
         </div>
     </Router>
 );
