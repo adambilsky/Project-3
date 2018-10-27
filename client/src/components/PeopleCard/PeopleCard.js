@@ -11,7 +11,7 @@ const PeopleCard = props => (
 
                 <h4>{props.firstName} {props.lastName}</h4>
                 <p>{props.tagline}</p>
-                <p>{props.schoolName} | <b>Major:</b> {props.degree} <b>Concentration:</b> {props.concentration} | {props.city}</p>
+                <p>{props.schoolName} | <b>Major:</b> {props.degree} <b>Concentration:</b> {props.concentration} | <b>Location: </b>{props.city}</p>
                 <p>Contact: {props.email}</p>
 
             </div>

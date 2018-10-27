@@ -1,10 +1,14 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "mongoose": "^5.3.2"
-  }
+  },
+  "engines": {
+    "node": "8.10.0"
+}
 }
