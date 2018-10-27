@@ -2,14 +2,14 @@ var Student = {
     userName: "Super8isGreat",
     firstName: "Marty",
     lastName: "Scorsese",
-    schoolName: "DePaul University",
+    schoolName: "USC",
     schoolValid: "True",
 
-    degree: "Film",
+    degree: "MFA",
     concentration: "Directing",
-    city: "Chicago",
+    city: "Los Angeles",
     contactInfo: {
-        email: "marty@damob.net",
+        email: "steve@jaws.net",
 mobile: "800 - 555 - 5297",
     },
 

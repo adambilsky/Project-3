@@ -27,7 +27,7 @@ class Profile extends React.Component {
             <div className="container">
                 <PeopleCard
                     id={1}
-                    image={"https://i.imgur.com/wU1W62O.jpg"}
+                    image={"./images/mario.png"}
                     alt={"is this gona work"}
                     firstName={this.state.student.firstName}
                     lastName={this.state.student.lastName}
@@ -38,6 +38,7 @@ class Profile extends React.Component {
                     city={this.state.student.city}
                     email={Student.contactInfo.email}
                 />
+                <h4>Experience:</h4>
                 <WorkList>
                     <ListItem>
                         <img src="https://i.imgur.com/wU1W62O.jpg" alt="" className="circle" />
