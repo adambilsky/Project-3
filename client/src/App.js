@@ -5,6 +5,7 @@ import React, { Component }  from "react";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
 import Profile from "./components/Profile";
+import Main from "./Main";
 // import pages and components here // 
 
 // import Students from "./pages/student";
@@ -37,7 +38,7 @@ const App = () => (
             <Nav />
                 <Route exact path="/" component={Jumbotron} />
                 <Route exact path="/profile" component={Profile} />
-                <Route exact path="/students" component={StudentsList} />
+                <Route exact path="/main" component={Main} />
                 <Route exact path="/add" component={AddUser} />
 
                 {
