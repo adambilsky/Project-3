@@ -28,6 +28,16 @@ handleSubmit = (e) => {
     console.log(this.state)
     // Were are going to call a function with our data from the form
     // this.props.addUser(this.state);
+    //     API.saveStudent({
+        /* not sure how to construct this, maybe req.body,
+        or we import the format of the body?
+        or list all the fields. Not sure.
+        */
+    //     })
+        //   .then(res => this.loadStudents())
+        //   .catch(err => console.log(err));
+    //  };
+
     this.setState({
     userName: '',
     firstName: '',

@@ -3,11 +3,11 @@ const db = require("../models");
 
 // This file empties the Student collection and inserts the records below
 
-mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/imdbu"//Update with IMDBU Mongodb
+// mongoose.connect(
+//     process.env.MONGODB_URI ||
+//     "mongodb://localhost/imdbu"//Update with IMDBU Mongodb
 
-  );
+//   );
 
   const studentSeed = [
       {

@@ -29,16 +29,14 @@ class Profile extends React.Component {
     }
 
 
-
-
-
-
-
     render() {
         return (
+
             <div className="container">
+                {/* { console.log(this.state.student.contactInfo["email"]) } */}
+
                 <PeopleCard
-                    id={1}
+                    id={this.state.student.id}
                     image={"https://i.imgur.com/wU1W62O.jpg"}
                     alt={"is this gona work"}
                     firstName={this.state.student.firstName}
@@ -48,7 +46,7 @@ class Profile extends React.Component {
                     degree={this.state.student.degree}
                     concentration={this.state.student.concentration}
                     city={this.state.student.city}
-                    email={"email"}
+                    email={"this.state.student.contactInfo[0]"}
                 />
                 <h4>Experience:</h4>
                 <WorkList>

@@ -10,12 +10,7 @@ import API from "./utils/API";
 class Main extends Component {
 
     state = {
-        students: [
-            // { name: "Marty Scorcese", tagline: "I am a film student", img: "./images/mario.png" },
-            // { name: "Adam Bilnsky", tagline: "I direct short horror films", img: "./images/luigi.png" },
-            // { name: "Julie Ores", tagline: "I am a director of photography", img: "./images/mario.png" },
-            // { name: "Will Thompson", tagline: "I am a camera operator", img: "./images/luigi.png" }
-        ]
+        students: []
     }
 
     componentDidMount() {
@@ -48,10 +43,10 @@ class Main extends Component {
                         <WorkList>
 
                             <ListItem key={student._id}>
-                                <img src={student.img} alt="" className="circle" />
+                                <img src={student._id.img} alt="" className="circle" />
                                 <Link to={`/profile/${student._id}`}>
                                     <span className="title">
-                                        <b>{student.firstName} {student.lastName} {student.schoolName}</b>
+                                        <b>{student._id.firstName} {student._id.lastName} {student._id.schoolName}</b>
                                     </span></Link>
                             </ListItem>
 
