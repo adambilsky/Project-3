@@ -37,7 +37,8 @@ const App = () => (
                 
             <Nav />
                 <Route exact path="/" component={Jumbotron} />
-                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/profile/:id" component={Profile} />
+
                 <Route exact path="/main" component={Main} />
                 <Route exact path="/add" component={AddUser} />
 

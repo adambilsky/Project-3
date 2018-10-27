@@ -1,6 +1,8 @@
 import React from "react";
 import PeopleCard from '../PeopleCard';
-import Student from "./student.js"
+// import Student from "./student.js"
+import API from "../../utils/API";
+
 import { WorkList, ListItem } from "../WorkList";
 
 // const Profile = props => (
@@ -16,18 +18,28 @@ class Profile extends React.Component {
         student: []
     };
 
+
     componentDidMount() {
-        this.setState({ student: Student })
+        API.getStudent(this.props.match.params.id)
+
+            .then(res => this.setState({ student: res.data }))
+            .catch(err => console.log(err));
+
+        // this.setState({ student: Student })
     }
 
-    
+
+
+
+
+
 
     render() {
         return (
             <div className="container">
                 <PeopleCard
                     id={1}
-                    image={"./images/mario.png"}
+                    image={"https://i.imgur.com/wU1W62O.jpg"}
                     alt={"is this gona work"}
                     firstName={this.state.student.firstName}
                     lastName={this.state.student.lastName}
@@ -36,7 +48,7 @@ class Profile extends React.Component {
                     degree={this.state.student.degree}
                     concentration={this.state.student.concentration}
                     city={this.state.student.city}
-                    email={Student.contactInfo.email}
+                    email={"email"}
                 />
                 <h4>Experience:</h4>
                 <WorkList>
@@ -46,9 +58,9 @@ class Profile extends React.Component {
                         <p><b>Role</b> <br />
                             Description. I did this. We worked together, it was great.</p>
                     </ListItem>
-                    </WorkList>
+                </WorkList>
 
-                    <WorkList>
+                <WorkList>
                     <ListItem>
                         <img src="https://i.imgur.com/tjF63dq.jpg" alt="" className="circle" />
                         <span className="title"><b>Project Title 2</b></span>
