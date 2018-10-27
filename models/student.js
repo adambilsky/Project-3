@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
     title: { type: String, required: true },
+    createdBy: { type: Array, required: true },
     // director: { type: String, required: true },
     year: { type: String, required: true },
     genre: String,
