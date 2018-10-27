@@ -43,10 +43,10 @@ class Main extends Component {
                         <WorkList>
 
                             <ListItem key={student._id}>
-                                <img src={student._id.img} alt="" className="circle" />
+                                <img src={student.img} alt="" className="circle" />
                                 <Link to={`/profile/${student._id}`}>
                                     <span className="title">
-                                        <b>{student._id.firstName} {student._id.lastName} {student._id.schoolName}</b>
+                                        <b>{student.firstName} {student.lastName} {student.schoolName}</b>
                                     </span></Link>
                             </ListItem>
 
