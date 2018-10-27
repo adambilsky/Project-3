@@ -107,6 +107,9 @@ const studentSchema = new Schema({
     },
     bio: String,
     profileImg: String,
+
+    // profileImg: Image,
+
     dateJoined: { type: Date, default: Date.now }
 
 });

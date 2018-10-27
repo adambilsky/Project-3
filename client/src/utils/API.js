@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export default {
+
     // *** API --STUDENT-- CRUD FUNCTIONS HERE ***
 
     // List (get) all students
@@ -50,6 +51,33 @@ export default {
     deleteSchool: function(id) {
       return axios.delete("/api/schools/" + id);
     },
+=======
+    
+// API CRUD functions here
+
+// List (get) all students
+
+
+// Search (get) for student by id
+
+
+// Add (post) new student to database
+
+
+// Update (put) student record
+
+
+// List (get) all schools
+
+
+// Search (get) school by id
+
+
+// Add (post) new school to database
+
+
+// Update (put) school record
+
 
 
 };
