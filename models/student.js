@@ -10,7 +10,7 @@ const studentSchema = new Schema(
         schoolValid: { type: Boolean, default: false },
         degree: String,
         concentration: String,
-        city: { type: String, required: true }, // this could be updated to distinguish current residence from school location
+        city: String, // this could be updated to distinguish current residence from school location
         email: { type: String, required: true },
         mobile: String,
 
@@ -89,9 +89,6 @@ const studentSchema = new Schema(
         },
 
     },
-    // resume: {
-    //     type: [projectSchema]
-    // },
     bio: String,
     profileImg: String,
     dateJoined: { type: Date, default: Date.now }
