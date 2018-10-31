@@ -18,23 +18,15 @@ class Profile extends React.Component {
         student: []
     };
 
-
     componentDidMount() {
         API.getStudent(this.props.match.params.id)
-
             .then(res => this.setState({ student: res.data }))
             .catch(err => console.log(err));
-
-        // this.setState({ student: Student })
     }
-
 
     render() {
         return (
-
             <div className="container">
-                {/* { console.log(this.state.student.contactInfo["email"]) } */}
-
                 <PeopleCard
                     id={this.state.student.id}
                     image={"https://i.imgur.com/wU1W62O.jpg"}
@@ -46,24 +38,20 @@ class Profile extends React.Component {
                     degree={this.state.student.degree}
                     concentration={this.state.student.concentration}
                     city={this.state.student.city}
-                    email={"this.state.student.contactInfo[0]"}
+                    email={this.state.student.email}
                 />
                 <h4>Experience:</h4>
+                {/* {this.state.students.resume.map(student => ( */}
                 <WorkList>
                     <ListItem>
-                        <img src="https://i.imgur.com/wU1W62O.jpg" alt="" className="circle" />
-                        <span className="title"><b>Project Title 1</b></span>
-                        <p><b>Role</b> <br />
-                            Description. I did this. We worked together, it was great.</p>
+                        {/* <p>Project: {student.resume}</p> */}
                     </ListItem>
                 </WorkList>
+                {/* ))} */}
 
                 <WorkList>
                     <ListItem>
-                        <img src="https://i.imgur.com/tjF63dq.jpg" alt="" className="circle" />
-                        <span className="title"><b>Project Title 2</b></span>
-                        <p><b>Role</b> <br />
-                            Description. I did this. We worked together, it was great.</p>
+                            resume={this.state.student.concentration}
                     </ListItem>
                 </WorkList>
 

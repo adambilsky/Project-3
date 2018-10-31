@@ -16,12 +16,12 @@ class Main extends Component {
     componentDidMount() {
         this.loadStudents();
     }
-
     loadStudents = () => {
         API.getStudents()
             .then(res => this.setState({ students: res.data }))
             .catch(err => console.log(err));
     };
+
 
     render() {
         return (
