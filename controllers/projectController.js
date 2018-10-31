@@ -17,7 +17,15 @@ module.exports = {
   },
   findBySchool: function(req, res) {
     db.Project
-      .findBySchool(req.params.school)
+      .findBySchool(req.params.school) /* <-- how do we define this key on the projects Object? */
+      .sort({ dateAdded: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  findByUser: function(req, res) {
+    db.Project
+      .findByUser(req.params.user) /* how do we define this key on the projects Object? */
       .sort({ dateAdded: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

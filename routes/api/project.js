@@ -10,6 +10,11 @@ router.route("/")
 router
   .route("/:school")
   .get(projectController.findBySchool);
+
+// Matches with "/api/projects/:user"
+router
+  .route("/:user")
+  .get(projectController.findByUser);
   
 // Matches with "/api/projects/:id"
 router

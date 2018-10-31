@@ -54,7 +54,6 @@ class Main extends Component {
                     ))}
                 </div>
 
-                {/* <AllStudents students={this.state.students} /> */}
             </div>
         )
     }

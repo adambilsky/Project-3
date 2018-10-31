@@ -1,26 +1,23 @@
 import React from "react";
 import PeopleCard from '../PeopleCard';
-// import Student from "./student.js"
+import ProjectCard from '../ProjectCard';
 import API from "../../utils/API";
 
 import { WorkList, ListItem } from "../WorkList";
 
-// const Profile = props => (
-// <div>
-
-// </div>
-// );
-
-
 class Profile extends React.Component {
 
     state = {
-        student: []
+        student: [],
+        projects: []
     };
 
     componentDidMount() {
         API.getStudent(this.props.match.params.id)
             .then(res => this.setState({ student: res.data }))
+            .catch(err => console.log(err));
+        API.getStudentProjects(this.props.match.params.id) /* <-- this parameter can't be the same - placeholder only */
+            .then(res => this.setState({ projects: res.data }))
             .catch(err => console.log(err));
     }
 
@@ -40,21 +37,22 @@ class Profile extends React.Component {
                     city={this.state.student.city}
                     email={this.state.student.email}
                 />
+            </div>
+            <div className="container">
                 <h4>Experience:</h4>
-                {/* {this.state.students.resume.map(student => ( */}
-                <WorkList>
-                    <ListItem>
-                        {/* <p>Project: {student.resume}</p> */}
-                    </ListItem>
-                </WorkList>
-                {/* ))} */}
-
-                <WorkList>
-                    <ListItem>
-                            resume={this.state.student.concentration}
-                    </ListItem>
-                </WorkList>
-
+                {this.state.projects.map(project => (
+                    <ProjectCard>
+                        <WorkList>
+                            <ListItem key={project._id}>
+                                title={this.state.projects.title}
+                                yearCreated={this.state.projects.yearCreated}
+                                createdBy={this.state.projects.createdBy}
+                                description={this.state.projects.description}
+                                link={this.state.projects.link}
+                            </ListItem>
+                        </WorkList>
+                    </ProjectCard>
+                ))}
             </div>
         );
     }
