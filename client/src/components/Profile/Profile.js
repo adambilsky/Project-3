@@ -44,7 +44,8 @@ class Profile extends React.Component {
 
                             <ListItem key={project._id}>
                             <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
-                            <p>Title: {project.title}</p>
+                            <p><b>{project.title}</b></p>
+                            <p>{project.description}</p>
                             </ListItem>
 
                         </WorkList>
