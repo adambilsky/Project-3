@@ -39,19 +39,18 @@ class Profile extends React.Component {
                     email={this.state.student.email}
                 />
                 <h4>Experience:</h4>
-                {this.state.projects.map(project => (
-                    <ProjectCard>
+                    {this.state.projects.map(project => (
                         <WorkList>
+
                             <ListItem key={project._id}>
-                                title={this.state.projects.title}
-                                yearCreated={this.state.projects.yearCreated}
-                                createdBy={this.state.projects.createdBy}
-                                description={this.state.projects.description}
-                                link={this.state.projects.link}
+                            <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
+                            <p>Title: {project.title}</p>
                             </ListItem>
+
                         </WorkList>
-                    </ProjectCard>
-                ))}
+                    ))}
+
+
             </div>
         );
     }

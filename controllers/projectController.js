@@ -33,7 +33,7 @@ module.exports = {
 
   findByUser: function(req, res) {
     db.Project
-      .find({ users: { $in: [req.params.id] }}) 
+      .find({ createdBy: { $in: [req.params.id] }}) 
       .sort({ dateAdded: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

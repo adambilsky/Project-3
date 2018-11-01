@@ -23,4 +23,8 @@ router
   .put(projectController.update)
   .delete(projectController.remove);
 
+router 
+  .route("/student/:id")
+  .get(projectController.findByUser)
+
 module.exports = router;
