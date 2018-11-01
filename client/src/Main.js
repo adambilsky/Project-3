@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import AllStudents from './components/AllStudents/AllStudents';
 import './Styling/AllStudents.css'
-import StudentList from "../src/components/PeopleCard/student";
 import SchoolCard from "../src/components/SchoolCard";
 import { WorkList, ListItem } from "../src/components/WorkList";
 import API from "./utils/API";
@@ -21,7 +20,6 @@ class Main extends Component {
             .then(res => this.setState({ students: res.data }))
             .catch(err => console.log(err));
     };
-
 
     render() {
         return (

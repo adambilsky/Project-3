@@ -13,6 +13,7 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
+        console.log(this);
         API.getStudent(this.props.match.params.id)
             .then(res => this.setState({ student: res.data }))
             .catch(err => console.log(err));
@@ -37,8 +38,6 @@ class Profile extends React.Component {
                     city={this.state.student.city}
                     email={this.state.student.email}
                 />
-            </div>
-            <div className="container">
                 <h4>Experience:</h4>
                 {this.state.projects.map(project => (
                     <ProjectCard>

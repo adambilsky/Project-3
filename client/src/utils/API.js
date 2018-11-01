@@ -33,7 +33,7 @@ export default {
 
   // Search (get) school by id
   getSchool: function (id) {
-    return axios.get("api/schools" + id);
+    return axios.get("api/schools/" + id);
   },
 
   // Add (post) new school to database
@@ -59,18 +59,18 @@ export default {
   },
   // List (get) all projects within a single school
   getSchoolProjects: function (school) {
-    return axios.get("api/projects" + school);
+    return axios.get("api/projects/" + school);
   },
 
   // List (get) all projects containing a student ID
-  getStudentProjects: function (user) {
-    return axios.get("api/projects" + user)
+  getStudentProjects: function (studentId) {
+    return axios.get("api/projects/" + studentId + "?type==student")
   },
 
   // Search (get) project by the project id
-  getProject: function (id) {
-    return axios.get("api/projects" + id);
-  },
+  // getProject: function (id) {
+  //   return axios.get("api/projects/" + id);
+  // },
 
   // Add (post) new project to database
   saveProject: function (projectData) {

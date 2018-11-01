@@ -43,20 +43,19 @@ class AddUser extends Component {
     })
       .then(res => console.log("student added!"))
       .catch(err => console.log(err));
-  };
-
-  //   this.setState({
-  //   userName: '',
-  //   firstName: '',
-  //   lastName: '',
-  //   schoolName: '', 
-  //   degree: '', 
-  //   concentration: '', 
-  //   city: '', 
-  //   email: '', 
-  //   mobile: '',
-  //   bio: ''
-  // });
+      this.setState({
+        userName: '',
+        firstName: '',
+        lastName: '',
+        schoolName: '', 
+        degree: '', 
+        concentration: '', 
+        city: '', 
+        email: '', 
+        mobile: '',
+        bio: ''
+       });
+      };
 
   render() {
     return (

@@ -9,9 +9,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findProjects: function(req, res) {
+    if(req.id.type=="student") {
+      return this.findByUser(req, res);
+    }
+    else if(req.query.type==="school") {
+      this.findBySchool(req, res)
+    }
+  },
   findById: function(req, res) {
     db.Project
-      .findById(req.params.id)
+      // .findById()
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -25,7 +33,7 @@ module.exports = {
 
   findByUser: function(req, res) {
     db.Project
-      .findByUser(req.params.user) /* how do we define this key on the projects Object? */
+      .find({ users: { $in: [req.params.id] }}) 
       .sort({ dateAdded: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

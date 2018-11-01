@@ -7,19 +7,19 @@ router.route("/")
   .post(projectController.create);
 
 // Matches with "/api/projects/:school"
-router
-  .route("/:school")
-  .get(projectController.findBySchool);
+// router
+//   .route("/:school")
+//   .get(projectController.findBySchool);
 
-// Matches with "/api/projects/:user"
-router
-  .route("/:user")
-  .get(projectController.findByUser);
-  
+// // Matches with "/api/projects/:user"
+// router
+//   .route("/:user")
+//   .get(projectController.findByUser);
+
 // Matches with "/api/projects/:id"
 router
   .route("/:id")
-  .get(projectController.findById)
+  .get(projectController.findProjects)
   .put(projectController.update)
   .delete(projectController.remove);
 
