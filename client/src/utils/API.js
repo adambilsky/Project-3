@@ -11,6 +11,12 @@ export default {
   getStudent: function (id) {
     return axios.get("/api/students/" + id);
   },
+  
+  // Get all students from a single school
+  getStudentsBySchool: function (schoolId) {
+    return axios.get("/api/schools/students/" + schoolId);
+  },
+
   // Deletes the student with the given id
   deleteStudent: function (id) {
     return axios.delete("/api/students/" + id);

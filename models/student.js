@@ -7,6 +7,7 @@ const studentSchema = new Schema(
         firstName: { type: String, required: true },
         lastName: { type: String, required: true },
         schoolName: { type: String, required: true },
+        schoolId: String,
         schoolValid: { type: Boolean, default: false },
         degree: String,
         concentration: String,

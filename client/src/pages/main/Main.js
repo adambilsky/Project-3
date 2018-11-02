@@ -17,7 +17,7 @@ class Main extends Component {
             .then(res => this.setState({ school: res.data }))
             .catch(err => console.log(err));
 
-        API.getStudents()
+        API.getStudentsBySchool(this.props.match.params.id)
             .then(res => this.setState({ students: res.data }))
             .catch(err => console.log(err));
 
