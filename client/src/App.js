@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Landing from "./pages/landing";
 import Profile from "./pages/profile";
 import Main from "./pages/main";
+import Schools from "./pages/school";
 // import pages and components here // 
 
 // import Students from "./pages/student";
@@ -37,8 +38,9 @@ const App = () => (
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/profile/:id" component={Profile} />
 
-                <Route exact path="/main" component={Main} />
+                <Route exact path="/school/:id" component={Main} />
                 <Route exact path="/add" component={AddUser} />
+                <Route exact path="/schools" component={Schools} />
 
                 {
                 /*  <Route exact path="/" component={} />

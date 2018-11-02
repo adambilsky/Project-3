@@ -1,53 +1,47 @@
-import React, { Component } from "react";
-import API from "../../utils/API";
+import React from "react";
 import { Link } from "react-router-dom";
-
-// import other style items from components folder
-//
-//
-//
-//
-//
-//
+import SchoolCard from '../../components/SchoolCard';
+import API from "../../utils/API";
 
 
-class Schools extends Component {
+
+class Schools extends React.Component {
     // set initial state
-    state = {};
+    state = {
+        schools: []
+    };
 
     componentDidMount() {
-        // call primary load method here
+        this.loadSchools()
     }
 
     // declare school "load" (get) method using API promise
     loadSchools = () => {
         API.getSchools()
           .then(res =>
-            this.setState({})
+            this.setState({ schools: res.data })
           )
           .catch(err => console.log(err));
       };
     
-    /* declare other school request methods -
-
-        update?
-        delete?
-        search filters? */
 
 
-    // declare input change method
-
-
-    // declare form submission method
-
-
-    // setup page rendering
-
-    render () {
+      render() {
         return (
-            console.log("The page is currently empty.")
-            // page design here
+            <div className="container">
+                <h4>Schools:</h4>
+                    {this.state.schools.map(school => (
+                        <SchoolCard key={school._id}
+                        id={school._id}
+                            schoolName={school.schoolName}
+                            tagLine={school.tagLine}
+                            email={school.adminEmail}
+                            city={school.schoolCity}
+                        />
+                    ))}
 
+
+            </div>
         );
     }
 }

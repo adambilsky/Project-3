@@ -8,30 +8,33 @@ import API from "../../utils/API";
 class Main extends Component {
 
     state = {
-        students: []
+        students: [],
+        school: []
     }
 
     componentDidMount() {
-        this.loadStudents();
-    }
-    loadStudents = () => {
+        API.getSchool(this.props.match.params.id)
+            .then(res => this.setState({ school: res.data }))
+            .catch(err => console.log(err));
+
         API.getStudents()
             .then(res => this.setState({ students: res.data }))
             .catch(err => console.log(err));
-    };
+
+    }
 
     render() {
         return (
             <div className="Main">
                 <div className="container">
                     <SchoolCard
-                        id={1}
+                        id={this.state.school.id}
                         image={"https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/depaul_u-1/original.png?1532644892"}
                         alt={"is this gonna work"}
-                        tagline={"We want our students to succeed..."}
-                        schoolName={"DePaul University"}
-                        city={"Chicago, IL"}
-                        email={"filmdep@depaul.edu"}
+                        tagline={this.state.school.bio}
+                        schoolName={this.state.school.schoolName}
+                        city={this.state.school.schoolCity}
+                        email={this.state.school.adminEmail}
                     />
                 </div>
                 <div className="container">
