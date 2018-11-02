@@ -1,9 +1,8 @@
 import React from "react";
-import PeopleCard from '../PeopleCard';
-import ProjectCard from '../ProjectCard';
+import PeopleCard from '../../components/PeopleCard';
 import API from "../../utils/API";
 
-import { WorkList, ListItem } from "../WorkList";
+import { WorkList, ListItem } from "../../components/WorkList";
 
 class Profile extends React.Component {
 
@@ -27,7 +26,7 @@ class Profile extends React.Component {
             <div className="container">
                 <PeopleCard
                     id={this.state.student.id}
-                    image={"https://i.imgur.com/wU1W62O.jpg"}
+                    image={this.state.student.profileImg}
                     alt={"is this gona work"}
                     firstName={this.state.student.firstName}
                     lastName={this.state.student.lastName}
@@ -43,9 +42,9 @@ class Profile extends React.Component {
                         <WorkList>
 
                             <ListItem key={project._id}>
-                            <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
-                            <p><b>{project.title}</b></p>
-                            <p>{project.description}</p>
+                                <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
+                                <p><b>{project.title}</b></p>
+                                <p>{project.description}  <a href={project.link} target="_blank">Watch it here</a></p>
                             </ListItem>
 
                         </WorkList>

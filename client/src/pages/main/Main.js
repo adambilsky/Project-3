@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import AllStudents from './components/AllStudents/AllStudents';
-import './Styling/AllStudents.css'
-import SchoolCard from "../src/components/SchoolCard";
-import { WorkList, ListItem } from "../src/components/WorkList";
-import API from "./utils/API";
+import '../../Styling/AllStudents.css'
+import SchoolCard from "../../components/SchoolCard";
+import { WorkList, ListItem } from "../../components/WorkList";
+import API from "../../utils/API";
 
 class Main extends Component {
 
@@ -28,7 +27,7 @@ class Main extends Component {
                     <SchoolCard
                         id={1}
                         image={"https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/depaul_u-1/original.png?1532644892"}
-                        alt={"is this gona work"}
+                        alt={"is this gonna work"}
                         tagline={"We want our students to succeed..."}
                         schoolName={"DePaul University"}
                         city={"Chicago, IL"}
