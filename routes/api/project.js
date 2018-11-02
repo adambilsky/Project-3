@@ -23,6 +23,7 @@ router
   .put(projectController.update)
   .delete(projectController.remove);
 
+  // Matches with "/api/projects/student/:id"
 router 
   .route("/student/:id")
   .get(projectController.findByUser)

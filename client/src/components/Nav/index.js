@@ -11,11 +11,12 @@ import React from "react";
 */
 const Nav = () => (
   <nav>
-    <div className="nav-wrapper orange lighten-2">
+    <div className="nav-wrapper z-depth-2 black lighten-2">
       <a href="/" className="brand-logo">IMDBu</a>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><a href="/schools">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
+      <ul id="nav-mobile" className="right hide-on-sm-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile/:id">Profile</a></li>
+        <li><a href="/link">Logout</a></li>
       </ul>
     </div>
   </nav>

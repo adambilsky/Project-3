@@ -27,7 +27,7 @@ class Profile extends React.Component {
                 <PeopleCard
                     id={this.state.student.id}
                     image={this.state.student.profileImg}
-                    alt={"is this gona work"}
+                    alt={"is this gonna work"}
                     firstName={this.state.student.firstName}
                     lastName={this.state.student.lastName}
                     tagline={this.state.student.bio}
@@ -43,7 +43,7 @@ class Profile extends React.Component {
 
                             <ListItem key={project._id}>
                                 <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
-                                <p><b>{project.title}</b></p>
+                                <p><b>{project.title}</b>, Created by: {}</p>
                                 <p>{project.description}  <a href={project.link} target="_blank">Watch it here</a></p>
                             </ListItem>
 
