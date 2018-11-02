@@ -73,6 +73,10 @@ export default {
     return axios.get("/api/projects/student/" + studentId)
   },
 
+  getUserProjects: function(studentId) {
+    return axios.get("/api/projects/users/" + studentId)
+  },
+
   // Search (get) project by the project id
   // getProject: function (id) {
   //   return axios.get("api/projects/" + id);

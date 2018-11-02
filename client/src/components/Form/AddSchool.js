@@ -3,7 +3,6 @@ import API from "../../utils/API";
 
 // Still need to add to database or state
 class AddSchool extends Component {
-
   state = {
     schoolName: [],
     schoolCity: '',
@@ -17,6 +16,7 @@ class AddSchool extends Component {
     URL: '',
     bio: ''
   };
+
   // we target the id of the input which we conviently named the same as our state properties
   handleChange = (e) => {
     this.setState({
@@ -30,7 +30,6 @@ class AddSchool extends Component {
     // Were are going to call a function with our data from the form
     // this.props.addUser(this.state);
     API.saveSchool({
-
        schoolName: this.state.schoolName,
        schoolCity: this.state.schoolCity,
        adminFirstName: this.state.adminFirstName,

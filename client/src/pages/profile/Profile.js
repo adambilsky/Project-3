@@ -9,6 +9,9 @@ class Profile extends React.Component {
     state = {
         student: [],
         projects: []
+
+        // create two arrays here - one for OWNED projects, and one for projects listed as a participant?
+
     };
 
     componentDidMount() {
@@ -16,9 +19,13 @@ class Profile extends React.Component {
         API.getStudent(this.props.match.params.id)
             .then(res => this.setState({ student: res.data }))
             .catch(err => console.log(err));
-        API.getStudentProjects(this.props.match.params.id) /* <-- this parameter can't be the same - placeholder only */
+        API.getStudentProjects(this.props.match.params.id)
             .then(res => this.setState({ projects: res.data }))
             .catch(err => console.log(err));
+        // API.getUserProjects(this.props.match.params.id)
+        //     .then(res => this.setState({ projects: res.data }))
+        //     .catch(err => console.log(err));
+
     }
 
     render() {

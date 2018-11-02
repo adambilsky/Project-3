@@ -40,7 +40,7 @@ module.exports = {
   },
 
   // Find all projects *** created by *** a particular user
-  findByUser: function(req, res) {
+  findCreator: function(req, res) {
     db.Project
       .find({ createdBy: { $in: [req.params.id] }}) 
       .sort({ dateAdded: -1 })
@@ -48,6 +48,15 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  // Find all projects *** INVOLVING *** a particular user
+  findProjectUsers: function(req, res) {
+    db.Project
+      .find({ 'users.id' : [req.params.id] })
+      .sort({ dateAdded: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  
   // Add a new project
   create: function(req, res) {
     db.Project
