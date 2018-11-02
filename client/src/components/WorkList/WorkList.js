@@ -9,4 +9,4 @@ export const WorkList = ({ children }) => {
         </ul>
     </div >
     )
-}
+} 

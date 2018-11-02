@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import StudentsList from './components/AllStudents/Students'
-import AddUser from './components/Form'
+import StudentsList from './components/AllStudents/Students';
 import React, { Component }  from "react";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
 import Profile from "./components/Profile";
 import Main from "./Main";
+import AddUser from './components/Forms/AddUser'
+import AddProject from "./components/Forms/AddProject"
 // import pages and components here // 
 
 // import Students from "./pages/student";
@@ -38,10 +39,9 @@ const App = () => (
             <Nav />
                 <Route exact path="/" component={Jumbotron} />
                 <Route exact path="/profile/:id" component={Profile} />
-
                 <Route exact path="/main" component={Main} />
                 <Route exact path="/add" component={AddUser} />
-
+                <Route exact path="/p" component={AddProject} />
                 {
                 /*  <Route exact path="/" component={} />
                     <Route exact path="/" component={} />
