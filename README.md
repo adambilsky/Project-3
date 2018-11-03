@@ -31,3 +31,4 @@ All parties stand to benefit from high volume usage:
 - Film students will gain increased visibility within their home school and in their current city (i.e., there's no reason for a Radio-TV-Film major at Northwestern University not to get noticed by a production team at DePaul's School of Cinematic Arts, etc).
 - Film school faculty will gain exposure among current and potential students, as well as the general public.
 - Programs will gain increased visibility among potential students. High school students will use the application to compare school offerings, learn about notable alumni, and view current student work. 
+
