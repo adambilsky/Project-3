@@ -42,7 +42,7 @@ module.exports = {
   // Find all projects *** created by *** a particular user
   findCreator: function(req, res) {
     db.Project
-      .find({ createdBy: { $in: [req.params.id] }}) 
+      .find({ createdBy: req.params.id }) 
       .sort({ dateAdded: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -50,11 +50,29 @@ module.exports = {
 
   // Find all projects *** INVOLVING *** a particular user
   findProjectUsers: function(req, res) {
+    console.log('findProjectUsers hit!');
+    
     db.Project
-      .find({ 'users.id' : [req.params.id] })
+      .find({})
       .sort({ dateAdded: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then((projects) => {
+        const filtered = projects.filter(project => {
+          let onProject = false
+
+          project.users.forEach(user => {
+            if(user.id === req.params.id) {
+              onProject = true
+            } 
+          })
+
+          return onProject
+        })
+
+        res.json(filtered)
+      })
+      .catch(err => {
+        res.status(422).json(err)
+      });
   },
   
   // Add a new project

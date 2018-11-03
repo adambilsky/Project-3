@@ -9,8 +9,8 @@ const projectSchema = new Schema({
     link: String,
     image: String,
     yearCreated: String,
-    dateAdded: { type: Date, default: Date.now }
-    // users: Array /* <-- this is the array the API get route must search to find whether a student has a project to list on a profile */
+    dateAdded: { type: Date, default: Date.now },
+    users: [] /* <-- this is the array the API get route must search to find whether a student has a project to list on a profile */
 });
 
 const Project = mongoose.model("Project", projectSchema);
