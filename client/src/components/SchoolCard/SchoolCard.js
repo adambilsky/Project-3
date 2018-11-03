@@ -10,7 +10,7 @@ const SchoolCard = props => (
                 <img id="profPhoto" className="card-img-top" src={props.image} alt={props.name} />
                 <Link to={`/school/${props.id}`}><h4>{props.schoolName}</h4></Link>
                 <p>{props.tagline}</p>
-                <b><p>{props.schoolName} | {props.city}</p></b>
+                <b><p><a href={props.URL} target="_blank" >{props.schoolName}</a> | {props.city}</p></b>
                 <p>Contact: {props.email}</p>
 
             </div>

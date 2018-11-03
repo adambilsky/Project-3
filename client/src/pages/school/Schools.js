@@ -32,9 +32,10 @@ class Schools extends React.Component {
                 <h4>Schools:</h4>
                     {this.state.schools.map(school => (
                         <SchoolCard key={school._id}
-                        id={school._id}
+                            id={school._id}
                             schoolName={school.schoolName}
                             tagLine={school.tagLine}
+                            URL={school.URL}
                             email={school.adminEmail}
                             city={school.schoolCity}
                         />
