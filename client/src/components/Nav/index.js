@@ -1,0 +1,25 @@
+import React from "react";
+
+
+/*  For a solid UX, the design of this Nav section will be important, 
+    even if we don't implement all the features we plan to link to by
+    11/10.
+
+    - Drop-down menus for "student", "school", and "faculty"
+    - Direct link to view/update profile 
+    
+*/
+const Nav = () => (
+  <nav>
+    <div className="nav-wrapper z-depth-2 black lighten-2">
+      <a href="/" className="brand-logo">IMDBu</a>
+      <ul id="nav-mobile" className="right hide-on-sm-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile/:id">Profile</a></li>
+        <li><a href="/link">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+);
+
+export default Nav;

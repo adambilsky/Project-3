@@ -1,0 +1,31 @@
+img {
+    background-color: #ffffff;
+    border-style: none;
+}
+
+.card-grid-item {
+    
+}
+
+.grid-container {
+    padding-top: 20px;
+    margin: auto;
+    width: 75%;
+    text-align: center;
+}
+
+.tagLine {
+    float: left;
+}
+
+#profPhoto {
+    padding-top: 10px;
+}
+
+.striped {
+    padding-top: 20px;
+}
+
+.workDesc{
+    float: left; 
+}
