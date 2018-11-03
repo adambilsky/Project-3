@@ -66,13 +66,13 @@ class AddSchool extends Component {
           <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
           
           <label htmlFor="city">City:</label>
-          <input type="text" id="city" onChange={this.handleChange} value={this.state.city} />
+          <input type="text" id="schoolCity" onChange={this.handleChange} value={this.state.city} />
 
           <label htmlFor="firstName">Administrator First Name:</label>
           <input type="text" id="adminFirstName" onChange={this.handleChange} value={this.state.adminFirstName} />
 
           <label htmlFor="lastName">Administrator Last Name:</label>
-          <input type="text" id="lastName" onChange={this.handleChange} value={this.state.adminLastName} />
+          <input type="text" id="adminLastName" onChange={this.handleChange} value={this.state.adminLastName} />
 
           <label htmlFor="schoolName">Administrator e-mail:</label>
           <input type="text" id="adminEmail" onChange={this.handleChange} value={this.state.adminEmail} />
