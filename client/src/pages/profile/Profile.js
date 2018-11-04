@@ -50,7 +50,8 @@ class Profile extends React.Component {
 
                             <ListItem key={project._id}>
                                 <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
-                                <p><b>{project.title}</b>, Created by: {}</p>
+                                <p><b>{project.title}</b>, Submitted by: {project.createdBy}</p>
+                                <p><b>Collaborators:</b>{project.users.id}</p>
                                 <p>{project.description}  <a href={project.link} target="_blank">Watch it here</a></p>
                             </ListItem>
 

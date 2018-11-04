@@ -29,8 +29,9 @@ class Main extends Component {
                 <div className="container">
                     <SchoolCard
                         id={this.state.school.id}
-                        image={"https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/depaul_u-1/original.png?1532644892"}
-                        alt={"is this gonna work"}
+                        image={this.state.school.image}
+                        alt={""}
+                        URL={this.state.school.URL}
                         tagline={this.state.school.bio}
                         schoolName={this.state.school.schoolName}
                         city={this.state.school.schoolCity}

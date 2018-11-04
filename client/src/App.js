@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddUser from './components/Form/AddUser';
 import AddSchool from './components/Form/AddSchool';
+import AddProject from './components/Form/AddProject';
 import React, { Component }  from "react";
 import Nav from "./components/Nav";
 import Landing from "./pages/landing";
@@ -22,6 +23,7 @@ const App = () => (
                 <Route exact path="/school/:id" component={Main} />
                 <Route exact path="/addUser" component={AddUser} />
                 <Route exact path="/addSchool" component={AddSchool} />
+                <Route exact path="/addProject" component={AddProject} />
                 <Route exact path="/schools" component={Schools} />
         </div>
     </Router>

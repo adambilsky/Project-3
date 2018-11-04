@@ -12,6 +12,7 @@ const schoolSchema = new Schema({
    degree2: String,
    degree3: String,
    URL: String,
+   image: String,
    bio: String
 
 });

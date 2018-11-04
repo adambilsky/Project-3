@@ -29,7 +29,7 @@ class Schools extends React.Component {
       render() {
         return (
             <div className="container">
-                <h4>Schools:</h4>
+                <h4 >Schools</h4>
                     {this.state.schools.map(school => (
                         <SchoolCard key={school._id}
                             id={school._id}
