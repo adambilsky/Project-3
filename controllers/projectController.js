@@ -25,7 +25,7 @@ module.exports = {
   // Find a project by the project ID
   findById: function(req, res) {
     db.Project
-      // .findById()
+      .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -50,7 +50,6 @@ module.exports = {
 
   // Find all projects *** INVOLVING *** a particular user
   findProjectUsers: function(req, res) {
-    console.log('findProjectUsers hit!');
     
     db.Project
       .find({})

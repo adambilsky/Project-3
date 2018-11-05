@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import SchoolCard from '../../components/SchoolCard';
 import API from "../../utils/API";
 
-
-
 class Schools extends React.Component {
     // set initial state
     state = {
@@ -23,8 +21,6 @@ class Schools extends React.Component {
           )
           .catch(err => console.log(err));
       };
-    
-
 
       render() {
         return (

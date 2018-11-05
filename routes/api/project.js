@@ -17,11 +17,16 @@ router.route("/")
 
 router
   .route("/:id")
-  .get(projectController.findProjects)
+  .get(projectController.findById)
   .put(projectController.update)
   .delete(projectController.remove);
 
   // Matches with "/api/projects/student/:id"
+
+router
+  .route("/project/:id")
+  .get(projectController.findById);
+  
 router 
   .route("/student/:id")
   .get(projectController.findCreator);

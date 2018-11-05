@@ -10,8 +10,9 @@ const projectSchema = new Schema({
     image: String,
     yearCreated: String,
     dateAdded: { type: Date, default: Date.now },
-    users: [
-        { String, [String] }
+    users: [{ 
+        id: String,
+        roles: [String] }
     ] 
 });
 

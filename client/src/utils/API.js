@@ -63,6 +63,7 @@ export default {
   getProjects: function () {
     return axios.get("/api/projects/");
   },
+
   // List (get) all projects within a single school
   getSchoolProjects: function (school) {
     return axios.get("/api/projects/" + school);
@@ -78,9 +79,9 @@ export default {
   },
 
   // Search (get) project by the project id
-  // getProject: function (id) {
-  //   return axios.get("api/projects/" + id);
-  // },
+  getProject: function (id) {
+    return axios.get("/api/projects/" + id);
+  },
 
   // Add (post) new project to database
   saveProject: function (projectData) {

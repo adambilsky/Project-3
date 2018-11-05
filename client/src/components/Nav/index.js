@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./style.css";
 
 /*  For a solid UX, the design of this Nav section will be important, 
     even if we don't implement all the features we plan to link to by
@@ -11,7 +11,7 @@ import React from "react";
 */
 const Nav = () => (
   <nav>
-    <div className="nav-wrapper z-depth-2 black lighten-2">
+    <div className="nav-wrapper .top-bar._fixed z-depth-2 black lighten-2">
       <a href="/" className="brand-logo">IMDBu</a>
       <ul id="nav-mobile" className="right hide-on-sm-and-down">
         <li><a href="/">Home</a></li>

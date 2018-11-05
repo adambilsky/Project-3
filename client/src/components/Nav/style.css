@@ -1,0 +1,4 @@
+.top-bar._fixed {
+    position: fixed;
+    min-width: auto;
+}
