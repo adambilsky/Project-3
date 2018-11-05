@@ -10,15 +10,17 @@ import React from "react";
     
 */
 const Nav = () => (
-  <nav>
-    <div className="nav-wrapper orange lighten-2">
-      <a href="/" className="brand-logo">IMDBu</a>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><a href="/main">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <div className="nav-wrapper orange lighten-2">
+        <a href="/" className="brand-logo">IMDBu</a>
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li><a href="/main">Home</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 );
 
 export default Nav;
