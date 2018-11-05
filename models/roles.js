@@ -10,6 +10,7 @@ export default {
     900: 'Prop Master',
     1000: 'Production Assistant',
     1100: 'Hair & Makeup',
-    1200: 'Locations Manager'
+    1200: 'Locations Manager',
+    1300: 'Actor'
     
   }

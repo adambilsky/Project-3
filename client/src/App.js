@@ -1,7 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+<<<<<<< HEAD
 import StudentsList from './components/AllStudents/Students';
+=======
+>>>>>>> f1220a0a4377badc723933bc79ded6d9b3f34bc9
 import React, { Component }  from "react";
+import AddUser from './components/Form/AddUser';
+import AddSchool from './components/Form/AddSchool';
+import AddProject from './components/Form/AddProject';
 import Nav from "./components/Nav";
+<<<<<<< HEAD
 import Jumbotron from "./components/Jumbotron";
 import Profile from "./components/Profile";
 import Main from "./Main";
@@ -10,35 +17,23 @@ import AddProject from "./components/Forms/AddProject"
 // import pages and components here // 
 
 // import Students from "./pages/student";
+=======
+import Landing from "./pages/landing";
+import Main from "./pages/main";
+import Profile from "./pages/profile";
+>>>>>>> f1220a0a4377badc723933bc79ded6d9b3f34bc9
 import Schools from "./pages/school";
+import Project from "./pages/project";
 
 // import pages and components above // 
 
-/* Note: this App file is essentially a rendering router - 
-it doesn't require any other functions */
-
 const App = () => (
-/*  for now, the app is structured like the book app, 
-    but we will add and change as we go 
-    My understanding is this page will simply route between various 
-    pages, so all we have to do is supply the various routes
-    within the switch function, as long as the paths are correct. 
-    
-    Note: the book app (20-react/01-Activities/11-Stu_ReactRouter/ 
-        contains the model for this App file. It only switches between three pages 
-        (the default and the get "all" are the same), the single
-        book "Detail" page, and the "No Match" (or not found) page.
-
-        Not sure how the authentication pages fit into this structure.
-        */
-
     <Router>
         <div>
-            
-                
             <Nav />
-                <Route exact path="/" component={Jumbotron} />
+                <Route exact path="/" component={Landing} />
                 <Route exact path="/profile/:id" component={Profile} />
+<<<<<<< HEAD
                 <Route exact path="/main" component={Main} />
                 <Route exact path="/add" component={AddUser} />
                 <Route exact path="/p" component={AddProject} />
@@ -47,6 +42,14 @@ const App = () => (
                     <Route exact path="/" component={} />
                     <Route exact path="/" component={} /> */
                 }
+=======
+                <Route exact path="/school/:id" component={Main} />
+                <Route exact path="/project/:id" component={Project} />
+                <Route exact path="/addUser" component={AddUser} />
+                <Route exact path="/addSchool" component={AddSchool} />
+                <Route exact path="/addProject" component={AddProject} />
+                <Route exact path="/schools" component={Schools} />
+>>>>>>> f1220a0a4377badc723933bc79ded6d9b3f34bc9
         </div>
     </Router>
 );

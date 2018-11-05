@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import WorkList from "../WorkList";
 
 const PeopleCard = props => (
     <div>
