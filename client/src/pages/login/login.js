@@ -1,132 +1,42 @@
 import React from "react";
+import './login.css';
+import axios from 'axios';
 
-const ReactCSSTG = React.addons.CSSTransitionGroup;
+//const ReactCSSTG = React.addons.CSSTransitionGroup;
 
-// Main app
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isVisible: true
-        };
-        // Bindings
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleRemount = this.handleRemount.bind(this);
+class Login extends React.Component {
+    state = {
+
+    }
+    handleInput = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+
+        console.log(this.state);
+    }
+    handleSubmit = (event) => {
+        alert("submit works");
+        const loginInfo = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        axios.post('/authenticate', loginInfo).then( res => {
+            console.log(res);
+        })
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.setState(
-            {
-                isVisible: false
-            },
-            function () {
-                console.log(this.state.isVisible);
-            }
-        );
-        return false;
-    }
-    handleRemount(e) {
-        this.setState(
-            {
-                isVisible: true
-            },
-            function () {
-                console.log(this.state.isVisible);
-            }
-        );
-        e.preventDefault();
-    }
-    render() {
-        // const for React CSS transition declaration
-        let component = this.state.isVisible ? (
-            <Modal onSubmit={this.handleSubmit} key="modal" />
-        ) : (
-                <ModalBack onClick={this.handleRemount} key="bringitback" />
-            );
 
-        return (
-            <ReactCSSTG
-                transitionName="animation"
-                transitionAppear={true}
-                transitionAppearTimeout={500}
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}
-            >
-                {component}
-            </ReactCSSTG>
-        );
-    }
-}
-
-// Modal
-class Modal extends React.Component {
-    render() {
-        return (
-            <div className="Modal">
-                <Logo />
-                <form onSubmit={this.props.onSubmit}>
-                    <Input type="text" name="username" placeholder="username" />
-                    <Input type="password" name="password" placeholder="password" />
-                    <button> Sign In</button>
-                </form>
-                <div className="social-signin">
-                    <button className="fb" onClick={this.props.onClick}>
-                        <i className="fa fa-facebook" aria-hidden="true" />
-                    </button>
-                    <button className="tw" onClick={this.props.onClick}>
-                        <i className="fa fa-twitter" aria-hidden="true" />
-                    </button>
-                </div>
-                <a href="#">Lost your password ?</a>
+    render(){
+        return(
+            <div className="login">
+                <h2>login</h2>
+                <input onChange={this.handleInput} name="email" placeholder="email"/>
+                <input onChange={this.handleInput} name="password" placeholder="password"/>
+                <button onClick={this.handleSubmit}>Submit</button>
             </div>
-        );
+        )
     }
 }
 
-// Generic input field
-class Input extends React.Component {
-    render() {
-        return (
-            <div className="Input">
-                <input
-                    type={this.props.type}
-                    name={this.props.name}
-                    placeholder={this.props.placeholder}
-                    required
-                    autocomplete="false"
-                />
-                <label for={this.props.name} />
-            </div>
-        );
-    }
-}
-
-// Fake logo
-class Logo extends React.Component {
-    render() {
-        return (
-            <div className="logo">
-                <i className="fa fa-bug" aria-hidden="true" />
-                <span> awesome logo </span>
-            </div>
-        );
-    }
-}
-
-// Button to brind the modal back
-class ModalBack extends React.Component {
-    render() {
-        return (
-            <button
-                className="bringitback"
-                onClick={this.props.onClick}
-                key={this.props.className}
-            >
-                Brind the modal back !
-      </button>
-        );
-    }
-}
-
-ReactDOM.render(<App />, document.getElementById("app"));
+export default Login;

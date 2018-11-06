@@ -35,6 +35,7 @@ app.use(routes);
 //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/database');
 
 mongoose.connect(config.database); // connect to database
+
 // /mongoose.connect(connectionString,{ useNewUrlParser: true });
   
 
@@ -144,12 +145,11 @@ app.use('/api', apiRoutes);
 // =======================
 // start the server ======
 // =======================
-app.listen(port);
-console.log('Magic happens at http://localhost:' + port);
+app.listen(PORT, function(){
+  console.log('Magic happens at http://localhost:' + PORT);
+});
 
 
-// Start the API server
-// app.listen(PORT, function () {
-//   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+
 }
 )
