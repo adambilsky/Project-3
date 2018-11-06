@@ -35,8 +35,12 @@ app.use(routes);
 //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/database');
 
 mongoose.connect(config.database); // connect to database
+// /mongoose.connect(connectionString,{ useNewUrlParser: true });
+  
 
-"mongodb://adam:password123@ds019806.mlab.com:19806/heroku_7n79k02g"
+mongodb://adam:password123@ds019806.mlab.com:19806/heroku_7n79k02g
+
+
 
 // use morgan to log requests to the console
 app.use(morgan('dev'));
