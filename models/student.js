@@ -9,6 +9,7 @@ const studentSchema = new Schema(
         schoolName: { type: String, required: true },
         schoolId: { type: Schema.Types.ObjectId, ref: 'School' },
         schoolValid: { type: Boolean, default: false },
+        projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }],
         degree: String,
         concentration: String,
         city: String, // this could be updated to distinguish current residence from school location

@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
     title: { type: String, required: true },
-    createdBy: { type: String, required: true },
-    school: { type: String, required: true },
+    createdBy: { type: Schema.Types.ObjectId, ref: 'Student', required: true },
+    school: { type: Schema.Types.ObjectId, ref: 'School', required: true },
     description: String,
     link: String,
     image: String,

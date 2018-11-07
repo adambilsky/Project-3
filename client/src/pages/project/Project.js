@@ -2,29 +2,30 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import ProjectCard from "../../components/ProjectCard";
 import { WorkList, ListItem } from "../../components/WorkList";
-// import roles from "./roles";
+import roles from "./roles";
 
 class Project extends Component {
 
     state = {
         project: [],
         users: [],
-        user: ""
+        user: {}
     };
 
     componentDidMount() {
         console.log(this);
         this.loadProject()
+
     }
     loadProject = () => {
         API.getProject(this.props.match.params.id)
             .then(res => this.setState({ project: res.data, users: res.data.users }))
             .catch(err => console.log(err));
+    } 
+    getUserName = () => {
+        API.getStudent(this.state.project.users.userId)
+        console.log(this.state.project.users.userId);
     }
-    // getUserName = () => {
-    //     API.getStudent(this.state.user.id)
-    //     console.log(this.state.user.id);
-    // }
 
     render() {
         return (
@@ -44,8 +45,8 @@ class Project extends Component {
                     <p>(insert "Add User" Button here)</p>
                 </div>
                 <div className="container">
+                
                     {this.state.users.map(user => (
-                        // getUserName(user)
                             // .then(this.setState({ user: res.data.firstName }))
                             // .catch(err => console.log(err))
                            
@@ -56,6 +57,8 @@ class Project extends Component {
                                 </span>
                             </ListItem>
                         </WorkList>
+                        
+
                     ))}
 
                 </div>
