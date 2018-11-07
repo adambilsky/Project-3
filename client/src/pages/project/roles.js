@@ -12,5 +12,4 @@ export default {
     1100: 'Hair & Makeup',
     1200: 'Locations Manager',
     1300: 'Actor'
-    
   }
