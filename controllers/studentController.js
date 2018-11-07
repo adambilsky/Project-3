@@ -12,7 +12,7 @@ module.exports = {
   findBySchool: function(req, res) {
     db.Student
       .find({ schoolId: req.params.id })
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => console.log(res.json(dbModel)))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {

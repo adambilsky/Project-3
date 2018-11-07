@@ -41,7 +41,7 @@ class Project extends Component {
                     />
                 </div>
                 <div className="container">
-                    <h6>"Add User" Button</h6>
+                    <p>(insert "Add User" Button here)</p>
                 </div>
                 <div className="container">
                     {this.state.users.map(user => (
@@ -52,7 +52,7 @@ class Project extends Component {
                         <WorkList>
                             <ListItem key={user._id}>
                                 <span className="title">
-                                    <b>{user.id} | {user.roles.join(", ")}</b>
+                                    <b>{user.userId} | {user.roles.join(", ")}</b>
                                 </span>
                             </ListItem>
                         </WorkList>

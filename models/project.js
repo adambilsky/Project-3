@@ -10,10 +10,9 @@ const projectSchema = new Schema({
     image: String,
     yearCreated: String,
     dateAdded: { type: Date, default: Date.now },
-    users: [{ 
-        id: String,
-        roles: [String] }
-    ] 
+    users: [{ userId: { type: Schema.Types.ObjectId, ref: 'Student' }, roles: [String] }
+] 
+
 });
 
 const Project = mongoose.model("Project", projectSchema);

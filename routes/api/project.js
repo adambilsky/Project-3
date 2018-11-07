@@ -23,9 +23,9 @@ router
 
   // Matches with "/api/projects/student/:id"
 
-router
-  .route("/project/:id")
-  .get(projectController.findById);
+// router
+//   .route("/project/:id")
+//   .get(projectController.findById);
   
 router 
   .route("/student/:id")
