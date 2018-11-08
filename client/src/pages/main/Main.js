@@ -30,7 +30,7 @@ class Main extends Component {
 
     render() {
         return (
-            <Container fluid>
+            <Container>
                     <div className="Main">
                     <Row>
                         <div className="container">
@@ -70,28 +70,24 @@ class Main extends Component {
                         <Col size="md-6 sm-12">
                             <div className="container">
                                 <h4>Projects</h4>
-                                {this.state.projects.length ? (
+
+                                {this.state.projects.map(project => (
                                     <WorkList>
-                                    {this.state.projects.map(project => {
                                         <ListItem key={project._id}>
                                             <Link to={`/project/${project._id}`}>
                                                 <span className="title">
                                                     <b>{project.title}</b>
                                                 </span></Link>
                                         </ListItem>
-                                    })}
                                     </WorkList>
-                                 
-                                ) : (
-                                    <h3>No Projects to Display</h3>
-                                )}
-                                </div>
+                                ))}
+                            </div>
                          </Col>
                     </Row>
                 </div>
             </Container>
-        )
-    }
+        )    
+}
 
 }
 
