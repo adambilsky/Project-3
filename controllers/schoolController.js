@@ -11,7 +11,7 @@ module.exports = {
   },
   findByName: function(req, res){
     db.School
-      .find({ schoolName: req.params.name })
+      .find({ $text: { $search: req.params.name }}, {_id:1, schoolName:1, schoolCity:1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
