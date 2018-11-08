@@ -10,7 +10,6 @@ router.route("/")
 
 // ------------------------------------------------ 
 /*  This route would return all projects from a particular school,
-    Seems to be a route we wanted, not sure why it is currently commented out,
     Matches with "/api/projects/school/:school"*/
  router
   .route("/school/:id")

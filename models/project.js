@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
@@ -10,11 +10,15 @@ const projectSchema = new Schema({
     image: String,
     yearCreated: String,
     dateAdded: { type: Date, default: Date.now },
-    users: [{ userId: { type: Schema.Types.ObjectId, ref: 'Student' }, roles: [String] }
-] 
+    users: [
+        { 
+            userId: { type: Schema.Types.ObjectId, ref: 'Student' }, 
+            roles: [String] 
+        }
+    ] 
 
 });
 
-const Project = mongoose.model("Project", projectSchema);
+const Project = mongoose.model('Project', projectSchema, 'projects');
 
 module.exports = Project;

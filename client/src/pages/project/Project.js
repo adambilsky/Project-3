@@ -9,12 +9,13 @@ class Project extends Component {
     state = {
         project: [],
         users: [],
-        user: {}
+        user: ""
     };
 
     componentDidMount() {
         console.log(this);
-        this.loadProject()
+        this.loadProject();
+        // this.getUserName();
 
     }
     loadProject = () => {
@@ -22,10 +23,10 @@ class Project extends Component {
             .then(res => this.setState({ project: res.data, users: res.data.users }))
             .catch(err => console.log(err));
     } 
-    getUserName = () => {
-        API.getStudent(this.state.project.users.userId)
-        console.log(this.state.project.users.userId);
-    }
+    // getUserName = () => {
+    //     API.(this.state.users.userId)
+    //     console.log(this.state.users.userId);
+    // }
 
     render() {
         return (

@@ -10,6 +10,7 @@ class AddUser extends Component {
     firstName: "",
     lastName: "",
     schoolName: "",
+    schoolID: "",
     degree: "",
     concentration: "",
     city: "",
@@ -23,23 +24,26 @@ class AddUser extends Component {
       [e.target.id]: e.target.value
     })
   }
+  findSchoolId = () => {
+    API.getSchoolByName(this.state.schoolName)
+       .then(res => this.setState({ schoolID: res.data }))
+       .catch(err => console.log(err));
+  }
   // on submit we grab the state and all its values and pass them to the parent component
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
-    // Were are going to call a function with our data from the form
-    // this.props.addUser(this.state);
-    API.saveStudent({
-      userName: this.state.userName,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      schoolName: this.state.schoolName,
-      degree: this.state.degree,
-      concentration: this.state.concentration,
-      city: this.state.city,
-      email: this.state.email,
-      mobile: this.state.mobile,
-      bio: this.state.bio
+    console.log(this.state);
+      API.saveStudent({
+        userName: this.state.userName,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        schoolName: this.state.schoolID,
+        degree: this.state.degree,
+        concentration: this.state.concentration,
+        city: this.state.city,
+        email: this.state.email,
+        mobile: this.state.mobile,
+        bio: this.state.bio
     })
       .then(res => console.log("student added!"))
       .catch(err => console.log(err));
@@ -56,7 +60,7 @@ class AddUser extends Component {
         bio: ''
        });
       };
-
+    
   render() {
     return (
       <div>
@@ -70,7 +74,8 @@ class AddUser extends Component {
           <label htmlFor="lastName">Last Name:</label>
           <input type="text" id="lastName" onChange={this.handleChange} value={this.state.lastName} />
 
-          <label htmlFor="schoolName">School Name:</label>
+          <label htmlFor="schoolName">School Name:</label><button onClick={this.findSchoolId}>Search</button>
+
           <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
 
           <label htmlFor="degree">Degree:</label>

@@ -23,15 +23,33 @@ module.exports = {
         break;
     }
   },
-  // Find a project by the project ID
+  // Find a project by the project ID ("from api/projects/:id")
   findById: function(req, res) {
     db.Project
       .findById(req.params.id)
-      .populate('Student')
+      // .populate({
+      //   path: 'users',
+      //   populate: {
+      //     path: 'userId',
+      //     model: 'Student'
+      //   } 
+      // })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
 
+  // special populate function
+  findUsersByProject: function(req,res) {
+    db.Project
+    .findById(req.params.id)
+      .populate({
+        path: 'users',
+        populate: {
+          path: 'userId',
+          model: 'Student'
+        } 
+      })
+  },
   // Find all projects associated with a particular school
   findBySchool: function(req, res) {
     db.Project

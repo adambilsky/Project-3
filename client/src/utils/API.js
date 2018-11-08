@@ -46,6 +46,9 @@ export default {
   getSchool: function (id) {
     return axios.get("/api/schools/" + id);
   },
+  getSchoolByName: function(schoolName) {
+    return axios.get("api/schools/schoolName/" + schoolName)
+  },
 
   // Add (post) new school to database
   saveSchool: function (schoolData) {
@@ -69,11 +72,13 @@ export default {
   // see "/routes/project" for details
 
   // List (get) all projects
+  // Postman-approved!
   getProjects: function () {
     return axios.get("/api/projects/");
   },
 
   // List (get) all projects within a single school
+  // Postman-approved!
   getSchoolProjects: function (school) {
     return axios.get("/api/projects/school/" + school);
   },
@@ -86,13 +91,19 @@ export default {
   
   // Get all USER ids associated with a particular PROJECT id
   // **** THIS IS A VERY IMPORTANT ROUTE! ****
+  // Postman-approved!
   getUserProjects: function(studentId) {
     return axios.get("/api/projects/users/" + studentId)
   },
 
   // Search (get) project by the project id
+  // Postman-approved!
   getProject: function (id) {
     return axios.get("/api/projects/" + id);
+  },
+
+  getProjectUsers: function (id) {
+    return axios.get("/api/projects/users" + id);
   },
 
   // Add (post) new project to database
@@ -101,8 +112,8 @@ export default {
   },
 
   // Update (put) project record
-  updateProject: function (projectData) {
-    return axios.put("/api/projects/", projectData);
+  updateProject: function (id, projectData) {
+    return axios.put("/api/projects/" + id, projectData);
   },
 
   // Remove a project from the database
