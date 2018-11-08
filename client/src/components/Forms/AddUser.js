@@ -5,18 +5,18 @@ import React, { Component } from "react";
 class AddUser extends Component {
 
   state= { 
-    student: [
-    {userName: ""},
-    {firstName: ""},
-    {lastName: ""},
-    {schoolName: ""}, 
-    {degree: ""}, 
-    {concentration: ""}, 
-    {city: ""}, 
-    {email: ""}, 
-    {phoneNumber: ""},
-    {bio: ""}
-    ]
+    student: [],
+    userName: "",
+    firstName: "",
+    lastName: "",
+    schoolName: "", 
+    degree: "", 
+    concentration: "", 
+    city: "", 
+    email: "", 
+    phoneNumber: "",
+    bio: ""
+    
   }
   // we target the id of the input which we conviently named the same as our state properties
   handleChange = (e) => {
@@ -62,11 +62,15 @@ render(){
           <form onSubmit={this.handleSubmit}>
 
             <div className="input-field">
+            <i className="material-icons prefix">edit</i>
+
               <label htmlFor="firstName"><b className= "">First Name<span className = "red-text"> *</span></b></label>
               <input type="text" id="firstName" onChange ={this.handleChange} value={this.state.firstName} required/>
             </div>
 
             <div className="input-field">
+            <i className="material-icons prefix">edit</i>
+
               <label htmlFor="lastName"><b className= "">Last Name<span className = "red-text"> *</span></b></label>
               <input type="text" id="lastName" onChange ={this.handleChange} value={this.state.lastName} required/>
             </div>
@@ -84,6 +88,7 @@ render(){
             </div>
 
             <div className="input-field">
+              <i className="material-icons prefix">book</i>
               <label htmlFor="degree"><b className= "">Degree:</b></label>
               <input type="text" id="degree" onChange ={this.handleChange} value={this.state.degree}/>
             </div>

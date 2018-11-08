@@ -1,11 +1,11 @@
-img {
+/* img {
     background-color: blue;
     vertical-align: baseline;
     border-style: groove;
     border-color: brown;
     margin: 10px;
     display: block;
-}
+} */
 
 .col-sm-6 {
     flex: 0 0 50%;

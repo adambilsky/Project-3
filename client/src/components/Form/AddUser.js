@@ -59,42 +59,82 @@ class AddUser extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="userName">Username:</label>
-          <input type="text" id="userName" onChange={this.handleChange} value={this.state.userName} />
+      <div className="container">
+        <div className="row">
+          <div className="col s12 l7">
+            <form onSubmit={this.handleSubmit}>
 
-          <label htmlFor="firstName">First Name:</label>
-          <input type="text" id="firstName" onChange={this.handleChange} value={this.state.firstName} />
+              <div className="input-field">
+              <i className="material-icons prefix">edit</i>
 
-          <label htmlFor="lastName">Last Name:</label>
-          <input type="text" id="lastName" onChange={this.handleChange} value={this.state.lastName} />
+                <label htmlFor="firstName"><b className= "">First Name<span className = "red-text"> *</span></b></label>
+                <input type="text" id="firstName" onChange ={this.handleChange} value={this.state.firstName} required/>
+              </div>
 
-          <label htmlFor="schoolName">School Name:</label>
-          <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
+              <div className="input-field">
+              <i className="material-icons prefix">edit</i>
 
-          <label htmlFor="degree">Degree:</label>
-          <input type="text" id="degree" onChange={this.handleChange} value={this.state.degree} />
+                <label htmlFor="lastName"><b className= "">Last Name<span className = "red-text"> *</span></b></label>
+                <input type="text" id="lastName" onChange ={this.handleChange} value={this.state.lastName} required/>
+              </div>
 
-          <label htmlFor="concentration">Concentration:</label>
-          <input type="text" id="concentration" onChange={this.handleChange} value={this.state.concentration} />
+              <div className="input-field">
+                <i className="material-icons prefix">person_pin</i>
+                <label htmlFor="userName"><b className= "">Username<span className = "red-text"> *</span></b></label>
+                <input type="text" id="userName" onChange ={this.handleChange} value={this.state.userName} required/>
+              </div>
 
-          <label htmlFor="city">City:</label>
-          <input type="text" id="city" onChange={this.handleChange} value={this.state.city} />
+              <div className="input-field">
+                <i className="material-icons prefix">school</i>
+                <label htmlFor="schoolName"><b className= "">School Name<span className = "red-text"> *</span></b></label>
+                <input type="text" id="schoolName" onChange ={this.handleChange} value={this.state.schoolName} required/>
+              </div>
 
-          <label htmlFor="email">Email:</label>
-          <input type="text" id="email" onChange={this.handleChange} value={this.state.email} />
+              <div className="input-field">
+              <i className="material-icons prefix">book</i>
 
-          <label htmlFor="mobile">mobile:</label>
-          <input type="tel" id="mobile" onChange={this.handleChange} value={this.state.mobile} />
+                <label htmlFor="degree"><b className= "">Degree:</b></label>
+                <input type="text" id="degree" onChange ={this.handleChange} value={this.state.degree}/>
+              </div>
 
-          <label htmlFor="bio">Bio:</label>
-          <input type="text" id="bio" onChange={this.handleChange} value={this.state.bio} />
+              <div className="input-field">
+              <i className="material-icons prefix">camera_roll</i>
+                <label htmlFor="concentration"><b className= "">Concentration:</b></label>
+                <input type="text" id="concentration" onChange ={this.handleChange} value={this.state.concentration}/>
+              </div>
 
-          <button>Submit</button>
+              <div className="input-field">
+                <i className="material-icons prefix">location_city</i>
+                <label htmlFor="city"><b className= "">City<span className = "red-text"> *</span></b></label>
+                <input type="text" id="city" onChange ={this.handleChange} value={this.state.city} required/>
+              </div>
 
-        </form>
+              <div className="input-field">
+                <i className="material-icons prefix">email</i>
+                <label htmlFor="email"><b className= "">Email<span className = "red-text"> *</span></b></label>
+                <input type="email" id="email" onChange ={this.handleChange} value={this.state.email} required/>
+              </div>
+
+              <div className="input-field">
+                <i className="material-icons prefix">smartphone</i>
+                <label htmlFor="phoneNumber"><b className= "">Phone Number:</b></label>
+                <input type="tel" id="phoneNumber" onChange ={this.handleChange} value={this.state.phoneNumber}/>
+              </div>
+
+              <div className="input-field">
+                <i className="material-icons prefix">message</i>
+                <label htmlFor="bio"><b className= "">Bio:</b></label>
+                <input type="text" id="bio" onChange ={this.handleChange} value={this.state.bio}/>
+              </div>
+
+              <div className="input-field">
+                <button className="btn">Submit</button>    
+              </div>
+
+          </form>
+        </div>
       </div>
+    </div>
     )
   }
 }

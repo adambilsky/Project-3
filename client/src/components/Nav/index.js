@@ -10,19 +10,6 @@ import "./style.css";
     
 */
 const Nav = () => (
-<<<<<<< HEAD
-  <header>
-    <nav>
-      <div className="nav-wrapper orange lighten-2">
-        <a href="/" className="brand-logo">IMDBu</a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><a href="/main">Home</a></li>
-          <li><a href="/profile">Profile</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-=======
   <nav>
     <div className="nav-wrapper .top-bar._fixed z-depth-2 black lighten-2">
       <a href="/" className="brand-logo">IMDBu</a>
@@ -33,7 +20,6 @@ const Nav = () => (
       </ul>
     </div>
   </nav>
->>>>>>> f1220a0a4377badc723933bc79ded6d9b3f34bc9
 );
 
 export default Nav;
