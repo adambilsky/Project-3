@@ -50,6 +50,7 @@ class AddSchool extends Component {
         adminFirstName: '',
         adminLastName: '',
         adminEmail: '',
+        adminPhone: '',
         degree1: '',
         degree2: '',
         degree3: '',

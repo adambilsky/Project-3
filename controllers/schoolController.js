@@ -9,6 +9,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByName: function(req, res){
+    db.School
+      .find({ $text: { $search: req.params.name }}, {_id:1, schoolName:1, schoolCity:1})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findById: function(req, res) {
     db.School
       .findById(req.params.id)

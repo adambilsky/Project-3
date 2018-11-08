@@ -2,6 +2,7 @@ import axios from "axios";
 
 export default {
   // *** API --STUDENT-- CRUD FUNCTIONS HERE ***
+  // see "/routes/student" for details
 
   // List (get) all students
   getStudents: function () {
@@ -30,7 +31,11 @@ export default {
     return axios.put("/api/students/", studentData);
   },
 
+// ------------------------------------------------ 
+// ------------------------------------------------ 
+
   // *** API --SCHOOL-- CRUD FUNCTIONS HERE ***
+  // see "/routes/school" for details
 
   // List (get) all schools
   getSchools: function () {
@@ -40,6 +45,10 @@ export default {
   // Search (get) school by id
   getSchool: function (id) {
     return axios.get("/api/schools/" + id);
+  },
+
+  getSchoolbyName: function (name) {
+    return axios.get("/api/schools/name/" + name);
   },
 
   // Add (post) new school to database
@@ -57,30 +66,42 @@ export default {
     return axios.delete("/api/schools/" + id);
   },
 
+  findByName: function(name){
+    return axios.get("/api/schools/name/" + name);
+  },
+
+// ------------------------------------------------ 
+// ------------------------------------------------ 
+
   // *** API --PROJECT-- CRUD FUNCTIONS HERE ***
+  // see "/routes/project" for details
 
   // List (get) all projects
   getProjects: function () {
     return axios.get("/api/projects/");
   },
+
   // List (get) all projects within a single school
   getSchoolProjects: function (school) {
-    return axios.get("/api/projects/" + school);
+    return axios.get("/api/projects/school/" + school);
   },
 
   // List (get) all projects containing a student ID
+  // Postman-approved!
   getStudentProjects: function (studentId) {
     return axios.get("/api/projects/student/" + studentId)
   },
-
+  
+  // Get all USER ids associated with a particular PROJECT id
+  // **** THIS IS A VERY IMPORTANT ROUTE! ****
   getUserProjects: function(studentId) {
     return axios.get("/api/projects/users/" + studentId)
   },
 
   // Search (get) project by the project id
-  // getProject: function (id) {
-  //   return axios.get("api/projects/" + id);
-  // },
+  getProject: function (id) {
+    return axios.get("/api/projects/" + id);
+  },
 
   // Add (post) new project to database
   saveProject: function (projectData) {

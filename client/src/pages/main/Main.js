@@ -20,7 +20,6 @@ class Main extends Component {
         API.getStudentsBySchool(this.props.match.params.id)
             .then(res => this.setState({ students: res.data }))
             .catch(err => console.log(err));
-
     }
 
     render() {
@@ -29,8 +28,9 @@ class Main extends Component {
                 <div className="container">
                     <SchoolCard
                         id={this.state.school.id}
-                        image={"https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/depaul_u-1/original.png?1532644892"}
-                        alt={"is this gonna work"}
+                        image={this.state.school.image}
+                        alt={""}
+                        URL={this.state.school.URL}
                         tagline={this.state.school.bio}
                         schoolName={this.state.school.schoolName}
                         city={this.state.school.schoolCity}
@@ -43,10 +43,10 @@ class Main extends Component {
                         <WorkList>
 
                             <ListItem key={student._id}>
-                                <img src={student.img} alt="" className="circle" />
+                                <img src={student.profileImg} alt="" className="circle" />
                                 <Link to={`/profile/${student._id}`}>
                                     <span className="title">
-                                        <b>{student.firstName} {student.lastName} {student.schoolName}</b>
+                                        <b>{student.firstName} {student.lastName}</b>
                                     </span></Link>
                             </ListItem>
 

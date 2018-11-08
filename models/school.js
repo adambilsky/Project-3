@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const schoolSchema = new Schema({
-   schoolName: { type: String, required: true },
+   schoolName: { type: String, required: true, text: true },
    schoolCity: { type: String, required: true },
    adminFirstName: { type: String, required: true },
    adminLastName: { type: String, required: true },
@@ -12,6 +12,7 @@ const schoolSchema = new Schema({
    degree2: String,
    degree3: String,
    URL: String,
+   image: String,
    bio: String
 
 });

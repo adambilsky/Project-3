@@ -1,17 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PeopleCard from '../../components/PeopleCard';
 import API from "../../utils/API";
-
 import { WorkList, ListItem } from "../../components/WorkList";
 
 class Profile extends React.Component {
 
     state = {
         student: [],
-        projects: []
-
-        // create two arrays here - one for OWNED projects, and one for projects listed as a participant?
-
+        projects: [],
+        roles: []
     };
 
     componentDidMount() {
@@ -19,13 +17,9 @@ class Profile extends React.Component {
         API.getStudent(this.props.match.params.id)
             .then(res => this.setState({ student: res.data }))
             .catch(err => console.log(err));
-        API.getStudentProjects(this.props.match.params.id)
-            .then(res => this.setState({ projects: res.data }))
+        API.getUserProjects(this.props.match.params.id)
+            .then(res => this.setState({ projects: res.data, roles: res.data }))
             .catch(err => console.log(err));
-        // API.getUserProjects(this.props.match.params.id)
-        //     .then(res => this.setState({ projects: res.data }))
-        //     .catch(err => console.log(err));
-
     }
 
     render() {
@@ -34,7 +28,7 @@ class Profile extends React.Component {
                 <PeopleCard
                     id={this.state.student.id}
                     image={this.state.student.profileImg}
-                    alt={"is this gonna work"}
+                    alt={"img"}
                     firstName={this.state.student.firstName}
                     lastName={this.state.student.lastName}
                     tagline={this.state.student.bio}
@@ -47,17 +41,13 @@ class Profile extends React.Component {
                 <h4>Experience:</h4>
                     {this.state.projects.map(project => (
                         <WorkList>
-
                             <ListItem key={project._id}>
-                                <img id="profPhoto" className="card-img-top circle" src={project.image} alt="alt"/>
-                                <p><b>{project.title}</b>, Created by: {}</p>
-                                <p>{project.description}  <a href={project.link} target="_blank">Watch it here</a></p>
+                                <img id="profPhoto" className="card-img-top circle" src={project.image} alt="img"/>
+                                <Link to={`/project/${project._id}`}>
+                                 <span><b>{project.title}</b> | {project.yearCreated}</span></Link> | <b>Roles:</b>{project.users.roles}
                             </ListItem>
-
                         </WorkList>
                     ))}
-
-
             </div>
         );
     }

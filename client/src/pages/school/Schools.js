@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import SchoolCard from '../../components/SchoolCard';
 import API from "../../utils/API";
-
-
 
 class Schools extends React.Component {
     // set initial state
@@ -23,18 +21,17 @@ class Schools extends React.Component {
           )
           .catch(err => console.log(err));
       };
-    
-
 
       render() {
         return (
             <div className="container">
-                <h4>Schools:</h4>
+                <h4 >Schools</h4>
                     {this.state.schools.map(school => (
                         <SchoolCard key={school._id}
-                        id={school._id}
+                            id={school._id}
                             schoolName={school.schoolName}
                             tagLine={school.tagLine}
+                            URL={school.URL}
                             email={school.adminEmail}
                             city={school.schoolCity}
                         />
