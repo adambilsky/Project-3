@@ -10,6 +10,7 @@ import Main from "./pages/main";
 import Profile from "./pages/profile";
 import Schools from "./pages/school";
 import Project from "./pages/project";
+import Login from "./pages/login";
 
 // import pages and components above // 
 
@@ -25,7 +26,11 @@ const App = () => (
                 <Route exact path="/addSchool" component={AddSchool} />
                 <Route exact path="/addProject" component={AddProject} />
                 <Route exact path="/schools" component={Schools} />
+
                 <Route exact path="/search" component={Search} />
+                <Route exact path="/login" component={Login} />
+
+
         </div>
     </Router>
 );
