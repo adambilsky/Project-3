@@ -9,6 +9,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByName: function(req, res){
+    db.School
+      .find({ schoolName: req.params.name })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findById: function(req, res) {
     db.School
       .findById(req.params.id)
