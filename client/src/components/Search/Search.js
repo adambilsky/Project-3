@@ -37,7 +37,7 @@ class Search extends Component {
                 {this.state.results.map(results => (
                     <WorkList>
                         <ListItem key={results._id}>                            
-                                <span><b>School: </b><Link to={`/school/${results._id}`}>{results.schoolName}</Link> | <b>School City: </b>{results.schoolCity}</span> | <b>Roles:</b>Other words
+                                <span><b>School: </b><Link to={`/school/${results._id}`}>{results.schoolName}</Link> | <b>City: </b>{results.schoolCity}</span>
                         </ListItem>
                     </WorkList>
                 ))}
