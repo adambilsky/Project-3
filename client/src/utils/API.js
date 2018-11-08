@@ -50,6 +50,10 @@ export default {
     return axios.get("api/schools/schoolName/" + schoolName)
   },
 
+  getSchoolbyName: function (name) {
+    return axios.get("/api/schools/name/" + name);
+  },
+
   // Add (post) new school to database
   saveSchool: function (schoolData) {
     return axios.post("/api/schools/", schoolData);
@@ -63,6 +67,10 @@ export default {
   // Remove a school from the database
   deleteSchool: function (id) {
     return axios.delete("/api/schools/" + id);
+  },
+
+  findByName: function(name){
+    return axios.get("/api/schools/name/" + name);
   },
 
 // ------------------------------------------------ 
