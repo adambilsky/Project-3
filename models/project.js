@@ -16,7 +16,6 @@ const projectSchema = new Schema({
             roles: [String] 
         }
     ] 
-    
 
 });
 
