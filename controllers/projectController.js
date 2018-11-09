@@ -25,23 +25,23 @@ module.exports = {
   },
   // Find a project by the project ID ("from api/projects/:id")
   findById: function(req, res) {
+    console.log('findById hit');
+    
     db.Project
-      .findById(req.params.id)
-      // .populate({
-      //   path: 'users',
-      //   populate: {
-      //     path: 'userId',
-      //     model: 'Student'
-      //   } 
-      // })
-      .then(dbModel => res.json(dbModel))
+      // .findById(req.params.id)
+      .find({ _id : req.params.id})
+      .populate('users.userId')
+      .then(function(project) {
+        console.log(project)
+        res.json(project);
+      })
       .catch(err => res.status(422).json(err));
   },
 
   // special populate function
   findUsersByProject: function(req,res) {
     db.Project
-    .findById(req.params.id)
+    .find({ _id : req.params.id})
       .populate({
         path: 'users',
         populate: {
@@ -49,6 +49,12 @@ module.exports = {
           model: 'Student'
         } 
       })
+      .then(function(project) {
+        res.json(project);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   },
   // Find all projects associated with a particular school
   findBySchool: function(req, res) {
@@ -90,6 +96,7 @@ module.exports = {
         console.log(filtered);
       })
       .catch(err => {
+        console.log(err)
         res.status(422).json(err)
       });
   },

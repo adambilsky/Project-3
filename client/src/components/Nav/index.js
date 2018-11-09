@@ -16,7 +16,7 @@ const Nav = () => (
       <ul id="nav-mobile" className="right hide-on-sm-and-down">
         <li><a href="/">Home</a></li>
         <li><a href="/schools">Browse Schools</a></li>
-        <li><a href="/profile/5bce43b7f19b7490120a516a">Profile</a></li>
+        <li><a href="/profile/5bce43b7f19b7490120a516a">My Profile</a></li>
         <li><a href="/">Logout</a></li>
       </ul>
     </div>

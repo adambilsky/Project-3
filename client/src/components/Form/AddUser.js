@@ -58,6 +58,7 @@ class AddUser extends Component {
       firstName: '',
       lastName: '',
       schoolName: '',
+      schoolID:'',
       degree: '',
       concentration: '',
       city: '',
@@ -71,26 +72,27 @@ class AddUser extends Component {
     return (
       <div className="container">
         <div className="row">
-          {/* <div className="col s12 l7"> */}
+          <div className="col s12 l7">
           <form onSubmit={this.handleSubmit}>
+          <div className="input-field">
+              <i className="material-icons prefix">school</i>
+              <label htmlFor="schoolName"><b className="">School Name<span className="red-text"> *</span></b></label>
+              <Search
+                setSchoolId={this.setSchoolId} />
+              <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} required />
+            </div>
+
             <div className="input-field">
               <i className="material-icons prefix">arrow_back</i>
-
               <label htmlFor="firstName"><b className="">First Name<span className="red-text"> *</span></b></label>
               <input type="text" id="firstName" onChange={this.handleChange} value={this.state.firstName} required />
             </div>
 
             <div className="input-field">
               <i className="material-icons prefix">arrow_forward</i>
-
               <label htmlFor="lastName"><b className="">Last Name<span className="red-text"> *</span></b></label>
               <input type="text" id="lastName" onChange={this.handleChange} value={this.state.lastName} required />
             </div>
-            <label htmlFor="schoolName">School Name:</label>
-              <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
-
-            <Search
-              setSchoolId={this.setSchoolId} />
 
             <div className="input-field">
               <i className="material-icons prefix">person_pin</i>
@@ -99,14 +101,7 @@ class AddUser extends Component {
             </div>
 
             <div className="input-field">
-              <i className="material-icons prefix">school</i>
-              <label htmlFor="schoolName"><b className="">School Name<span className="red-text"> *</span></b></label>
-              <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} required />
-            </div>
-
-            <div className="input-field">
               <i className="material-icons prefix">book</i>
-
               <label htmlFor="degree"><b className="">Degree:</b></label>
               <input type="text" id="degree" onChange={this.handleChange} value={this.state.degree} />
             </div>
@@ -148,7 +143,7 @@ class AddUser extends Component {
           </form>
         </div>
       </div>
-      // </div>
+    </div>
     )
   }
 }
