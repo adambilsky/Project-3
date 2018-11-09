@@ -2,23 +2,31 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import ProjectCard from "../../components/ProjectCard";
 import { WorkList, ListItem } from "../../components/WorkList";
+import roles from "./roles";
 
 class Project extends Component {
 
     state = {
         project: [],
-        users: []
+        users: [],
+        user: ""
     };
 
     componentDidMount() {
         console.log(this);
-        this.loadProject()
+        this.loadProject();
+        // this.getUserName();
+
     }
     loadProject = () => {
-        API.getProject(this.props.match.params.id) /* placeholder only? */
+        API.getProject(this.props.match.params.id)
             .then(res => this.setState({ project: res.data, users: res.data.users }))
             .catch(err => console.log(err));
-    }
+    } 
+    // getUserName = () => {
+    //     API.(this.state.users.userId)
+    //     console.log(this.state.users.userId);
+    // }
 
     render() {
         return (
@@ -35,16 +43,23 @@ class Project extends Component {
                     />
                 </div>
                 <div className="container">
+                    <p>(insert "Add User" Button here)</p>
+                </div>
+                <div className="container">
+                
                     {this.state.users.map(user => (
-
+                            // .then(this.setState({ user: res.data.firstName }))
+                            // .catch(err => console.log(err))
+                           
                         <WorkList>
                             <ListItem key={user._id}>
                                 <span className="title">
-                                    <b>{user.id} | {user.roles.join()}</b>
+                                    <b>{user.userId} | {user.roles.join(", ")}</b>
                                 </span>
                             </ListItem>
-
                         </WorkList>
+                        
+
                     ))}
 
                 </div>

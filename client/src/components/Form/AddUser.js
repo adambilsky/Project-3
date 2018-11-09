@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Search from "../Search";
 
 // Still need to add to database or state
 class AddUser extends Component {
@@ -10,6 +11,7 @@ class AddUser extends Component {
     firstName: "",
     lastName: "",
     schoolName: "",
+    schoolID: "",
     degree: "",
     concentration: "",
     city: "",
@@ -23,23 +25,31 @@ class AddUser extends Component {
       [e.target.id]: e.target.value
     })
   }
+  findSchoolId = () => {
+    API.getSchoolByName(this.state.schoolName)
+       .then(res => this.setState({ schoolID: res.data }))
+       .catch(err => console.log(err));
+  }
   // on submit we grab the state and all its values and pass them to the parent component
+  setSchoolId = (id) => {
+    this.setState({ schoolID : id })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
-    // Were are going to call a function with our data from the form
-    // this.props.addUser(this.state);
-    API.saveStudent({
-      userName: this.state.userName,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      schoolName: this.state.schoolName,
-      degree: this.state.degree,
-      concentration: this.state.concentration,
-      city: this.state.city,
-      email: this.state.email,
-      mobile: this.state.mobile,
-      bio: this.state.bio
+    console.log(this.state);
+      API.saveStudent({
+        userName: this.state.userName,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        schoolID: this.state.schoolID,
+        schoolName: this.state.schoolName,
+        degree: this.state.degree,
+        concentration: this.state.concentration,
+        city: this.state.city,
+        email: this.state.email,
+        mobile: this.state.mobile,
+        bio: this.state.bio
     })
       .then(res => console.log("student added!"))
       .catch(err => console.log(err));
@@ -56,13 +66,15 @@ class AddUser extends Component {
         bio: ''
        });
       };
-
+    
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col s12 l7">
-            <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="userName">Username:</label>
+          <input type="text" id="userName" onChange={this.handleChange} value={this.state.userName} />
 
               <div className="input-field">
               <i className="material-icons prefix">arrow_back</i>
@@ -73,6 +85,12 @@ class AddUser extends Component {
 
               <div className="input-field">
               <i className="material-icons prefix">arrow_forward</i>
+          <label htmlFor="schoolName">School Name:</label>
+
+          <Search
+            setSchoolId={this.setSchoolId}/>
+            
+          <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
 
                 <label htmlFor="lastName"><b className= "">Last Name<span className = "red-text"> *</span></b></label>
                 <input type="text" id="lastName" onChange ={this.handleChange} value={this.state.lastName} required/>

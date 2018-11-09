@@ -17,9 +17,6 @@ class Profile extends React.Component {
         API.getStudent(this.props.match.params.id)
             .then(res => this.setState({ student: res.data }))
             .catch(err => console.log(err));
-        // API.getStudentProjects(this.props.match.params.id)
-        //     .then(res => this.setState({ projects: res.data }))
-        //     .catch(err => console.log(err));
         API.getUserProjects(this.props.match.params.id)
             .then(res => this.setState({ projects: res.data, roles: res.data }))
             .catch(err => console.log(err));
