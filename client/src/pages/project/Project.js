@@ -14,7 +14,7 @@ class Project extends Component {
     };
 
     componentDidMount() {
-        console.log(this);
+        console.log(this.state);
         this.loadProject();
         console.log(projectRoles);
         console.log(Object.entries(projectRoles));
@@ -42,7 +42,8 @@ class Project extends Component {
                 <div className="container">
                     <ProjectCard
                         id={this.state.project.id}
-                        image={this.state.project.image}
+                        // image={this.state.project.image || "https://www.freeiconspng.com/img/23479"}
+                        src={this.state.project.src || "https://www.freeiconspng.com/img/23479"}
                         title={this.state.project.title}
                         yearCreated={this.state.project.yearCreated}
                         description={this.state.project.description}
@@ -60,7 +61,6 @@ class Project extends Component {
                             <ListItem key={user.userId._id}>
                                 <span className="title">
                                 <Link to={`/profile/${user.userId._id}`}><b>{user.userId.firstName} {user.userId.lastName}</b></Link> | {user.roles.join(", ")}
-                                    {/* // translateRole(user.roles) } */}
                                 </span>
                             </ListItem>
                         </WorkList>
