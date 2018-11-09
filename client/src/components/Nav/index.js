@@ -15,8 +15,9 @@ const Nav = () => (
       <a href="/" className="brand-logo">IMDBu</a>
       <ul id="nav-mobile" className="right hide-on-sm-and-down">
         <li><a href="/">Home</a></li>
-        <li><a href="/profile/:id">Profile</a></li>
-        <li><a href="/link">Logout</a></li>
+        <li><a href="/schools">Browse Schools</a></li>
+        <li><a href="/profile/5bce43b7f19b7490120a516a">Profile</a></li>
+        <li><a href="/">Logout</a></li>
       </ul>
     </div>
   </nav>
