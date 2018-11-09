@@ -5,8 +5,6 @@ const apiRoutes = require("./api");
 // API Routes
 router.use("/api", apiRoutes);
 
-router.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+
 
 module.exports = router;
