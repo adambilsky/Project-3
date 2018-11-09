@@ -1,17 +1,14 @@
 import React from "react";
 
-const Jumbotron = ({ children }) => (
-  <div
-    style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
-    className="jumbotron"
-  >
-  <h4>Welcome to IMDBu</h4>
-  <br/>
-  <h5>Continue to a <a href="/main">School's Profile</a></h5>
-  <br/>
-  <h5><a href="/projects">View All Projects</a></h5>
-    {children}
+const Jumbotron =()  => (
+  <div className="container">
+    <div className="row">
+      <div className="col sm12 m6 l6">
+        <h4>Welcome to g IMDBu!</h4>
+      </div>
+    </div>
   </div>
+  
 );
 
 export default Jumbotron;

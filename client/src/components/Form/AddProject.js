@@ -26,54 +26,81 @@ class AddProject extends Component {
     console.log(this.state)
 
     API.saveProject({
-        title: this.state.title,
-        createdBy: this.state.createdBy,
-        school: this.state.school,
-        description: this.state.description,
-        link: this.state.link,
-        image: this.state.image,
-        yearCreated: this.state.yearCreated,
-        users: this.state.users
+      title: this.state.title,
+      createdBy: this.state.createdBy,
+      school: this.state.school,
+      description: this.state.description,
+      link: this.state.link,
+      image: this.state.image,
+      yearCreated: this.state.yearCreated,
+      users: this.state.users
     })
       .then(res => console.log("Project added!"))
       .catch(err => console.log(err));
-      this.setState({
-        title: [],
-        createdBy: '',
-        school: '',
-        description: '',
-        link: '',
-        image: '',
-        yearCreated: '',
-        users: []
-        });
-      };
+    this.setState({
+      title: [],
+      createdBy: '',
+      school: '',
+      description: '',
+      link: '',
+      image: '',
+      yearCreated: '',
+      users: []
+    });
+  };
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="title">Title:</label>
-          <input type="text" id="title" onChange={this.handleChange} value={this.state.title} />
-          
-          <label htmlFor="createdBy">Created By:</label>
-          <input type="text" id="createdBy" onChange={this.handleChange} value={this.state.createdBy} />
+      <div className="container">
+        <div className="row">
+          <div className="col s12 l7">
+            <form onSubmit={this.handleSubmit}>
 
-          <label htmlFor="school">School:</label>
-          <input type="text" id="school" onChange={this.handleChange} value={this.state.school} />
+              <div className="input-field">
+                <i className="material-icons prefix"></i>
+                <label htmlFor="title">Title:</label>
+                <input type="text" id="title" onChange={this.handleChange} value={this.state.title} />
+              </div>
 
-          <label htmlFor="description">Description:</label>
-          <input type="text" id="description" onChange={this.handleChange} value={this.state.description} />
+              <div className="input-field">
+                <i className="material-icons prefix">person_pin</i>
+                <label htmlFor="createdBy">Created By:</label>
+                <input type="text" id="createdBy" onChange={this.handleChange} value={this.state.createdBy} />
+              </div>
 
-          <label htmlFor="link">Link to Project (YouTube, Vimeo, etc):</label>
-          <input type="text" id="link" onChange={this.handleChange} value={this.state.link} />
+              <div className="input-field">
+                <i className="material-icons prefix">school</i>
+                <label htmlFor="school">School:</label>
+                <input type="text" id="school" onChange={this.handleChange} value={this.state.school} />
+              </div>
 
-          <label htmlFor="image">Link to image:</label>
-          <input type="tel" id="image" onChange={this.handleChange} value={this.state.image} />
+              <div className="input-field">
+                <i className="material-icons prefix">person_pin</i>
+                <label htmlFor="description">Description:</label>
+                <input type="text" id="description" onChange={this.handleChange} value={this.state.description} />
+              </div>
 
-          <button>Submit</button>
+              <div className="input-field">
+                <i className="material-icons prefix">group_work</i>
+                <label htmlFor="link">Link to Project (YouTube, Vimeo, etc):</label>
+                <input type="text" id="link" onChange={this.handleChange} value={this.state.link} />
+              </div>
 
-        </form>
+
+              <div className="input-field">
+                <i className="material-icons prefix">person_pin</i>
+                <label htmlFor="image">Link to image:</label>
+                <input type="tel" id="image" onChange={this.handleChange} value={this.state.image} />
+              </div>
+
+              <div className="input-field">
+                <button>Submit</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
       </div>
     )
   }
