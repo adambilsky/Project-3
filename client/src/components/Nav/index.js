@@ -28,7 +28,7 @@ const Nav = () => (
 
 
           <ul id="dropdown1" className="dropdown-content">
-            <li><a href="/schools">Add School</a></li>
+            <li><a href="/addSchool">Add School</a></li>
             <li><a href="/schools">Browse Schools</a></li>
 
           </ul>
