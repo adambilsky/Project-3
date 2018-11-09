@@ -15,7 +15,6 @@ const SchoolCard = props => (
 
             </div>
         </div>
-        
     </div>
 );
 

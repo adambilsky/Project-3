@@ -3,6 +3,7 @@ import React, { Component }  from "react";
 import AddUser from './components/Form/AddUser';
 import AddSchool from './components/Form/AddSchool';
 import AddProject from './components/Form/AddProject';
+import Search from './components/Search';
 import Nav from "./components/Nav";
 import Landing from "./pages/landing";
 import Main from "./pages/main";
@@ -24,6 +25,7 @@ const App = () => (
                 <Route exact path="/addSchool" component={AddSchool} />
                 <Route exact path="/addProject" component={AddProject} />
                 <Route exact path="/schools" component={Schools} />
+                <Route exact path="/search" component={Search} />
         </div>
     </Router>
 );
