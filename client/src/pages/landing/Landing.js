@@ -24,7 +24,7 @@ const headerStyle={
 const Landing = () => (  
   
     <div className="container">
-
+    
       <div className="row" style={divStyle}>
         <div className="col s12 l12">
           <h1 className= "center" style={headerStyle} >Welcome to IMDBu!</h1>
