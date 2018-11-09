@@ -1,0 +1,15 @@
+/* img {
+    background-color: blue;
+    vertical-align: baseline;
+    border-style: groove;
+    border-color: brown;
+    margin: 10px;
+    display: block;
+} */
+
+.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 20px;
+    margin-left: -118px;
+}
