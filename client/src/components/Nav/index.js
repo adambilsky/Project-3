@@ -22,18 +22,18 @@ const Nav = () => (
       
     <a href="/" className="brand-logo">IMDBu</a>
         <ul id="nav-mobile" className="right hide-on-sm-and-down"></ul>
-        <ul class="right hide-on-med-and-down">
+        <ul className="right hide-on-med-and-down">
 
           <li><a href="/profile/5bce43b7f19b7490120a516a">Profile</a></li>
 
 
-          <ul id="dropdown1" class="dropdown-content">
+          <ul id="dropdown1" className="dropdown-content">
             <li><a href="/schools">Add School</a></li>
             <li><a href="/schools">Browse Schools</a></li>
 
           </ul>
 
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Schools<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Schools<i className="material-icons right">arrow_drop_down</i></a></li>
         
           
           <li><a href="/">Logout</a></li>
