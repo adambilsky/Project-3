@@ -65,14 +65,14 @@ class AddUser extends Component {
             <form onSubmit={this.handleSubmit}>
 
               <div className="input-field">
-              <i className="material-icons prefix">edit</i>
+              <i className="material-icons prefix">arrow_back</i>
 
                 <label htmlFor="firstName"><b className= "">First Name<span className = "red-text"> *</span></b></label>
                 <input type="text" id="firstName" onChange ={this.handleChange} value={this.state.firstName} required/>
               </div>
 
               <div className="input-field">
-              <i className="material-icons prefix">edit</i>
+              <i className="material-icons prefix">arrow_forward</i>
 
                 <label htmlFor="lastName"><b className= "">Last Name<span className = "red-text"> *</span></b></label>
                 <input type="text" id="lastName" onChange ={this.handleChange} value={this.state.lastName} required/>

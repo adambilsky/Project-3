@@ -11,6 +11,12 @@ const imgStyle={
   width: '44%'
 };
 
+const reelStyle={
+  paddingTop:'10px',
+  height: '20%',
+  width: '44%'
+}
+
 const headerStyle={
   fontWeight:'bold'
 }
@@ -44,12 +50,10 @@ const Landing = () => (
           <p>Display what you have worked on to a wide audience. Get more attention on your films.</p>
           <a href="./addProject" className="btn-floating red pulse">
             <i className="material-icons">add</i>
-
           </a>
-
         </div>
         <div className="col s12 l4 push-l2">
-          <img src="images/smallreel.png" alt="" style={imgStyle}></img>
+          <img src="images/smallreel.png" alt="" style={reelStyle}></img>
         </div>
       </div>
 
