@@ -6,7 +6,8 @@ import { WorkList, ListItem } from "../WorkList";
 class Search extends Component {
     state = {
         results: [],
-        schoolname: ''
+        schoolname: '',
+        schoolId: ''
     };
 
     handleChange = (e) => {
@@ -27,17 +28,27 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div >
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="schoolName">Search:</label>
                     <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} /><span><button>Search</button></span>
                 </form>
 
-                <h4>Results:</h4>
+                <p>Results:</p>
                 {this.state.results.map(results => (
                     <WorkList>
                         <ListItem key={results._id}>                            
-                                <span><b>School: </b><Link to={`/school/${results._id}`}>{results.schoolName}</Link> | <b>City: </b>{results.schoolCity}</span>
+                            <button 
+                            // this is using prop setSchoolId to set addUser schoolId to result._id prop
+                                onClick={() => this.props.setSchoolId(results._id)} 
+                                value={results._id}>
+                                Select
+                            </button>
+                            <span>
+                                <b>School: </b>
+                                <Link to={`/school/${results._id}`}>{results.schoolName}</Link> | 
+                                <b>City: </b>{results.schoolCity}
+                            </span>
                         </ListItem>
                     </WorkList>
                 ))}

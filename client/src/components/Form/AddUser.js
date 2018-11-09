@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Search from "../Search";
 
 // Still need to add to database or state
 class AddUser extends Component {
@@ -30,6 +31,10 @@ class AddUser extends Component {
        .catch(err => console.log(err));
   }
   // on submit we grab the state and all its values and pass them to the parent component
+  setSchoolId = (id) => {
+    this.setState({ schoolID : id })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
@@ -37,7 +42,8 @@ class AddUser extends Component {
         userName: this.state.userName,
         firstName: this.state.firstName,
         lastName: this.state.lastName,
-        schoolName: this.state.schoolID,
+        schoolID: this.state.schoolID,
+        schoolName: this.state.schoolName,
         degree: this.state.degree,
         concentration: this.state.concentration,
         city: this.state.city,
@@ -63,7 +69,7 @@ class AddUser extends Component {
     
   render() {
     return (
-      <div>
+      <div className="container">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="userName">Username:</label>
           <input type="text" id="userName" onChange={this.handleChange} value={this.state.userName} />
@@ -74,8 +80,11 @@ class AddUser extends Component {
           <label htmlFor="lastName">Last Name:</label>
           <input type="text" id="lastName" onChange={this.handleChange} value={this.state.lastName} />
 
-          <label htmlFor="schoolName">School Name:</label><button onClick={this.findSchoolId}>Search</button>
+          <label htmlFor="schoolName">School Name:</label>
 
+          <Search
+            setSchoolId={this.setSchoolId}/>
+            
           <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
 
           <label htmlFor="degree">Degree:</label>
