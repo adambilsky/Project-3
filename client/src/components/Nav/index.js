@@ -18,30 +18,30 @@ const Nav = () => (
   <nav>
 
     <div className="nav-wrapper .top-bar._fixed z-depth-2 black lighten-2">
-    
-      
-    <a href="/" className="brand-logo">IMDBu</a>
-        <ul id="nav-mobile" className="right hide-on-sm-and-down"></ul>
-        <ul class="right hide-on-med-and-down">
-
-          <li><a href="/profile/5bce43b7f19b7490120a516a">Profile</a></li>
 
 
-          <ul id="dropdown1" class="dropdown-content">
-            <li><a href="/schools">Add School</a></li>
-            <li><a href="/schools">Browse Schools</a></li>
+      <a href="/" className="brand-logo">IMDBu</a>
+      <ul id="nav-mobile" className="right hide-on-sm-and-down"></ul>
+      <ul class="right hide-on-med-and-down">
 
-          </ul>
+        <li><a href="/profile/5bce43b7f19b7490120a516a">Profile</a></li>
 
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Schools<i class="material-icons right">arrow_drop_down</i></a></li>
-        
-          
-          <li><a href="/">Logout</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Schools<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">Add School</a></li>
+          <li><a href="#!">Search Schools</a></li>
+
         </ul>
 
-      </div>
-    </nav>
-  
+
+
+        <li><a href="/">Logout</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
 )
 
 
