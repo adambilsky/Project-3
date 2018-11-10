@@ -61,7 +61,7 @@ class AddSchool extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="userName">School Name:</label>
           <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} />
