@@ -7,12 +7,14 @@ router.route("/")
   .get(schoolController.findAll)
   .post(schoolController.create);
 
+// CURRENTLY NOT BEING USED (SEE UTILS/API)
 router.route("/name/:name")
   .get(schoolController.findByName);
 
 // Matches with "api/schools/students/"
 router.route("/students/:id")
     .get(studentController.findBySchool);
+    console.log("find all students by schoolId route hit!")
 
 // Matches with "api/schools/schoolname/:id"
 router.route("/schoolName/:id")

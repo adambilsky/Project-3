@@ -16,7 +16,7 @@ class Search extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSearch = (e) => {
         e.preventDefault();
         // Were are going to call a function with our data from the form
         // this.props.addUser(this.state);
@@ -29,14 +29,13 @@ class Search extends Component {
     render() {
         return (
             <div >
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="schoolName">Search:</label>
+                <form onSubmit={this.handleSearch}>
+                    {/* <label htmlFor="schoolName">Search:</label> */}
                     <input type="text" id="schoolName" onChange={this.handleChange} value={this.state.schoolName} /><span><button>Search</button></span>
                 </form>
 
                 <p>Results:</p>
                 {this.state.results.map(results => (
-                    <WorkList>
                         <ListItem key={results._id}>                            
                             <button 
                             // this is using prop setSchoolId to set addUser schoolId to result._id prop
@@ -47,10 +46,9 @@ class Search extends Component {
                             <span>
                                 <b>School: </b>
                                 <Link to={`/school/${results._id}`}>{results.schoolName}</Link> | 
-                                <b>City: </b>{results.schoolCity}
+                                <b>City: </b>{results.schoolCity}<br />
                             </span>
                         </ListItem>
-                    </WorkList>
                 ))}
 
 

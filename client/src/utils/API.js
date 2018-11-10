@@ -50,7 +50,8 @@ export default {
     return axios.get("api/schools/schoolName/" + schoolName)
   },
 
-  getSchoolbyName: function (name) {
+  // CURRENTLY NOT IN USE
+  getSchoolName: function (name) {
     return axios.get("/api/schools/name/" + name);
   },
 
